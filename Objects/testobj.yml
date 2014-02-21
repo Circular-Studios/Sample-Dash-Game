@@ -15,6 +15,4 @@
         Color: !Vector3 .1 .1 .1
 -
     Name: TestCamera
-    Transform:
-        Position: !Vector3 0 0 0
-    Camera: hellsyes
+    InstanceOf: CameraFab
