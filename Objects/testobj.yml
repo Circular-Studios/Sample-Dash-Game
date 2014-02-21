@@ -3,7 +3,7 @@
     InstanceOf: SupaFab
     Light: !Light-Directional
         Color: !Vector3 1 1 1
-        Direction: !Vector3 0 -1 1
+        Direction: !Vector3 0 -1 0
 -
     Name: TestObject7
     InstanceOf: SupaFab
@@ -12,7 +12,7 @@
         Position: !Vector3 -25 0 0
         Scale: !Vector3 1 1 1
     Light: !Light-Ambient
-        Color: !Vector3 .3 0 0
+        Color: !Vector3 .1 .1 .1
 -
     Name: TestCamera
     Transform:
