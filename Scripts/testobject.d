@@ -75,7 +75,7 @@ class RotateBitch : GameObject
 		}
 
 
-		this.transform.rotation.rotatez( -std.math.PI / 90 * Time.deltaTime);
+		this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
 		this.transform.updateMatrix();
 		
 
