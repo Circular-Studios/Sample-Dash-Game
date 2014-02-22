@@ -6,7 +6,13 @@
 	"dependencies": {
 		"dash": "~master" 
 	},
-	"sourcePaths": [ "Scripts/" ],
+	"sourcePaths": [ 
+		"Scripts/",
+		"Config/", 
+		"Materials/",
+		"Objects/",
+		"Prefabs/",
+		"UI/",],
 	"importPaths": [ "Scripts/" ],
 	"targetType": "executable",
 	"targetPath": "Binaries/",
