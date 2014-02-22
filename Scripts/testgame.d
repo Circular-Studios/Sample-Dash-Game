@@ -20,7 +20,7 @@ import utility.output, utility.input;
 		goc.loadObjects( "" );
 
 		auto camobj = goc[ "TestCamera" ];
-		camobj.transform.rotation.rotatex( -std.math.PI_4 );
+		//camobj.transform.rotation.rotatex( -std.math.PI_4 );
 		Graphics.setCamera( camobj.camera );
 	}
 	

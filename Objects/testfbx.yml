@@ -1,7 +1,0 @@
--
-    Name: FbxObject
-    InstanceOf: FbxFab
-    Transform:
-        Position: !Vector3 0.0 0.0 -100.0
-        Scale: !Vector3 1 1 1
-        Rotation: !Vector3 -1.5 0 0
