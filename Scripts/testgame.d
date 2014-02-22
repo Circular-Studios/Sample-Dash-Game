@@ -1,10 +1,13 @@
 module testgame;
 import core.dgame, core.gameobjectcollection;
+import graphics.graphics;
+import components.camera;
 import utility.output, utility.input;
 
 @Game!TestGame class TestGame : DGame
 {
 	GameObjectCollection goc;
+	Camera cam;
 	
 	override void onInitialize()
 	{
@@ -15,6 +18,10 @@ import utility.output, utility.input;
 
 		goc = new GameObjectCollection;
 		goc.loadObjects( "" );
+
+		auto camobj = goc[ "TestCamera" ];
+		camobj.transform.rotation.rotatex( -std.math.PI_4 );
+		Graphics.setCamera( camobj.camera );
 	}
 	
 	override void onUpdate()
