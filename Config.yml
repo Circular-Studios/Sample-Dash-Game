@@ -6,7 +6,7 @@ Display:
     Height: 720
     Width: 1280
     FieldOfView: 90
-    NearPlane: 1
+    NearPlane: 0.01
     FarPlane: 1000
 Graphics:
     BackfaceCulling: true
