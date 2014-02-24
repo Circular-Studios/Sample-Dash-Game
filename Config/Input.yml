@@ -1,6 +1,6 @@
 Forward:
     - !Keyboard W
 Backward:
-    Keyboard: S
+    - !Keyboard S
 Jump:
-    Keyboard: !Keyboard Space
+    - !Keyboard Space
