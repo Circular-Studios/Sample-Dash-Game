@@ -1,8 +1,16 @@
 {
 	"name": "sample-dash-game",
-	"description": "A D game built with Dash.",
-	"copyright": "Copyright © 2014, Colden Cullen",
-	"authors": [ "Colden Cullen" ],
+	"description": "A sample D game built with Dash.",
+	"copyright": "2014",
+	"license": "MIT",
+	"authors": [ 
+		"Colden Cullen",
+		"Brandon Littell",
+		"Eric Christenson",
+		"Tyler Wozniak",
+		"Sean Brennan",
+		"Timothy Reynolds"
+		],
 	"dependencies": {
 		"dash": "~master" 
 	},
