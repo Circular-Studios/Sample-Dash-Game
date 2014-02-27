@@ -24,7 +24,7 @@ class TestObject : GameObject
 		}
 
 		this.transform.updateMatrix();
-
+		/*
 		auto liiiiight = (cast(DirectionalLight)this.light);
 
 		// If you were actually thinking about doing this in your game, please don't.
@@ -44,7 +44,7 @@ class TestObject : GameObject
 		blu += bluMod;
 		gre += greMod;
 
-		liiiiight.color = vec3(red/100.0f, blu/100.0f, gre/100.0f);
+		liiiiight.color = vec3(red/100.0f, blu/100.0f, gre/100.0f); */
 	}
 
 	/// Called on the draw cycle.
@@ -75,7 +75,7 @@ class RotateBitch : GameObject
 		}
 
 
-		this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
+		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
 		this.transform.updateMatrix();
 		
 
