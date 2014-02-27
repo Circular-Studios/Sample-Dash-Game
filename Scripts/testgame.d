@@ -4,7 +4,7 @@ import graphics.graphics;
 import components.camera;
 import utility.output, utility.input;
 
-@Game!TestGame class TestGame : DGame
+class TestGame : DGame
 {
 	GameObjectCollection goc;
 	Camera cam;
