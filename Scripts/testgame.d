@@ -11,7 +11,7 @@ class TestGame : DGame
 	
 	override void onInitialize()
 	{
-		Output.printMessage( OutputType.Info, "Initializing..." );
+		logInfo( "Initializing..." );
 
 		Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = GameState.Quit; } );
 		Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = GameState.Reset; } );
@@ -36,13 +36,13 @@ class TestGame : DGame
 
 	override void onShutdown()
 	{
-		Output.printMessage( OutputType.Info, "Shutting down..." );
+		logInfo( "Shutting down..." );
 		goc.apply( go => go.shutdown() );
 		goc.clearObjects();
 	}
 
 	override void onSaveState()
 	{
-		Output.printMessage( OutputType.Info, "Resetting..." );
+		logInfo( "Resetting..." );
 	}
 }
