@@ -25,8 +25,12 @@
 	"targetType": "executable",
 	"targetPath": "Binaries/",
 
+	"libs": [
+		"Awesomium"
+	],
+
 	"libs-windows": [
 		"gdi32", "ole32", "kernel32",
-		"user32", "comctl32", "comdlg32", "Awesomium"
+		"user32", "comctl32", "comdlg32"
 	]
 }
