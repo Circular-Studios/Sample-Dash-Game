@@ -7,7 +7,7 @@
         Scale: !Vector3 1 1 1
         Rotation: !Vector3 -90 0 0
 -
-    Name: Brick
+    Name: Brick0
     InstanceOf: BrickFab
     Transform: 
         Position: !Vector3 -40 0 -30
@@ -41,3 +41,43 @@
         Scale: !Vector3 1 1 1
         Rotation: !Vector3 0 0 0
     Camera: hellsyes
+-
+    Name: Brick01
+    InstanceOf: BrickFab
+    Transform: 
+        Position: !Vector3 -20 0 -30
+-
+    Name: Brick21
+    InstanceOf: BrickFab
+    Transform: 
+        Position: !Vector3 20 0 -30
+-
+    Name: Brick31
+    InstanceOf: BrickFab
+    Transform: 
+        Position: !Vector3 0 20 -30
+-
+    Name: Brick41
+    InstanceOf: BrickFab
+    Transform: 
+        Position: !Vector3 0 -20 -30
+-
+    Name: Brick011
+    InstanceOf: BrickFab
+    Transform: 
+        Position: !Vector3 -60 0 -30
+-
+    Name: Brick211
+    InstanceOf: BrickFab
+    Transform: 
+        Position: !Vector3 60 0 -30
+-
+    Name: Brick311
+    InstanceOf: BrickFab
+    Transform: 
+        Position: !Vector3 20 40 -30
+-
+    Name: Brick411
+    InstanceOf: BrickFab
+    Transform: 
+        Position: !Vector3 -20 -40 -30

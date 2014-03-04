@@ -103,7 +103,9 @@ class RotateThing : GameObject
 		}
 
 
-		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
+		this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
+		//this.transform.rotation.rotatey( std.math.PI * Time.deltaTime);
+		//this.transform.rotation.rotatex( -std.math.PI * Time.deltaTime);
 		this.transform.updateMatrix();
 		
 
