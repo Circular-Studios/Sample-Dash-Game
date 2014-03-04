@@ -1,0 +1,6 @@
+Name: BrickFab
+Transform:
+    Position: !Vector3 0.0 0.0 0.0
+    Scale: !Vector3 10 10 10
+Mesh: 786k
+Material: brickmat
