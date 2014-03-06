@@ -1,10 +1,13 @@
 -
     Name: PointLight
     Transform:
-        Position: !Vector3 0.0 0.0 -45
+        Position: !Vector3 0.0 0.0 -40
     Script:
         ClassName: testobject.MovePoint
     Light: !Light-Point
         Color: !Vector3 1 1 1
-        Radius: 40
-
+        Radius: 30
+-
+    Name: AmbientLight
+    Light: !Light-Ambient
+        Color: !Vector3 .05 .05 .05

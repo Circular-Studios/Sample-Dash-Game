@@ -7,26 +7,6 @@
         Scale: !Vector3 1 1 1
         Rotation: !Vector3 -90 0 0
 -
-    Name: Brick0
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 -40 0 -30
--
-    Name: Brick2
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 40 0 -30
--
-    Name: Brick3
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 0 40 -30
--
-    Name: Brick4
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 0 -40 -30
--
     Name: Widget2
     InstanceOf: SupaFab
     Parent: DudeBrah
@@ -41,29 +21,4 @@
         Scale: !Vector3 1 1 1
         Rotation: !Vector3 0 0 0
     Camera: hellsyes
--
-    Name: Brick01
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 -20 0 -30
--
-    Name: Brick21
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 20 0 -30
--
-    Name: Brick31
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 0 20 -30
--
-    Name: Brick41
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 0 -20 -30
--
-    Name: Brick411
-    InstanceOf: BrickFab
-    Transform: 
-        Position: !Vector3 -60 0 -30
 
