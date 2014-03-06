@@ -55,7 +55,7 @@ class TestObject : GameObject
 	override void onCollision( GameObject other ) { }
 }
 
-class MovePoint : GameObject
+class MovePointLight : GameObject
 {
 	// Overridables
 	override void onUpdate()
