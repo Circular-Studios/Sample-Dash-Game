@@ -4,7 +4,7 @@ import graphics.graphics;
 import components.camera;
 import utility.output, utility.input;
 
-class TestGame : DGame
+shared class TestGame : DGame
 {
 	GameObjectCollection goc;
 	Camera cam;
@@ -16,7 +16,7 @@ class TestGame : DGame
 		Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = GameState.Quit; } );
 		Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = GameState.Reset; } );
 
-		goc = new GameObjectCollection;
+		goc = new shared GameObjectCollection;
 		goc.loadObjects( "" );
 
 		auto camobj = goc[ "TestCamera" ];
