@@ -1,24 +1,4 @@
 -
-    Name: Widget1
-    InstanceOf: SupaFab
-    Parent: DudeBrah
-    Script:
-        ClassName: testobject.RotateThing
-    Transform:
-        Position: !Vector3 -8 0 25
-        Scale: !Vector3 1 1 1
-        Rotation: !Vector3 -90 0 0
--
-    Name: Widget2
-    InstanceOf: SupaFab
-    Parent: DudeBrah
-    Script:
-        ClassName: testobject.RotateThing
-    Transform:
-        Position: !Vector3 -14 0 25
-        Scale: !Vector3 1 1 1
-        Rotation: !Vector3 -90 0 0
--
     Name: TestCamera
     Script:
         ClassName: testobject.RotateThing
@@ -27,4 +7,3 @@
         Scale: !Vector3 1 1 1
         Rotation: !Vector3 0 0 0
     Camera: hellsyes
-
