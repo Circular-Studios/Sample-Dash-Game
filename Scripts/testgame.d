@@ -1,5 +1,5 @@
 module testgame;
-import core.dgame, core.gameobjectcollection;
+import core;
 import graphics.graphics;
 import components.camera;
 import utility.output, utility.input;
@@ -23,10 +23,15 @@ shared class TestGame : DGame
 		//camobj.transform.rotation.rotatex( -std.math.PI_4 );
 		Graphics.setCamera( camobj.camera );
 	}
-	
+
 	override void onUpdate()
 	{
-		goc.apply( go => go.update() );
+		import std.parallelism;
+		foreach( obj; taskPool.parallel( goc.objects.values ) )
+		//foreach( name, obj; goc.objects )
+		{
+			obj.update();
+		}
 	}
 	
 	override void onDraw()
