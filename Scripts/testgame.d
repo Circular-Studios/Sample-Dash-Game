@@ -26,12 +26,7 @@ shared class TestGame : DGame
 
 	override void onUpdate()
 	{
-		import std.parallelism;
-		foreach( obj; taskPool.parallel( goc.objects.values ) )
-		//foreach( name, obj; goc.objects )
-		{
-			obj.update();
-		}
+		goc.apply( go => go.update(), true );
 	}
 	
 	override void onDraw()
