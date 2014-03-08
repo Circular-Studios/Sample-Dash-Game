@@ -2,6 +2,7 @@ module testobject;
 import core.gameobject;
 import utility.input, utility.output, utility.time;
 import components;
+import components.userinterface;
 import gl3n.linalg;
 import std.random;
 
@@ -58,6 +59,14 @@ class TestObject : GameObject
 
 class RotateBitch : GameObject
 {
+	AwesomiumView aws_view;
+
+	this()
+	{
+		aws_view = new AwesomiumView( 800, 800, "http://google.com", this );
+		addComponent( aws_view );
+	}
+
 	// Overridables
 	override void onUpdate()
 	{
@@ -74,8 +83,9 @@ class RotateBitch : GameObject
 			log( OutputType.Info, "Jump" );
 		}
 
+		this.material.diffuse = aws_view;
+		//this.material.normal = aws_view;
 
-		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
 		this.transform.updateMatrix();
 		
 
