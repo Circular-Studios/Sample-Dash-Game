@@ -200,10 +200,10 @@ test-results/
 ### SublimeText ###
 # workspace files are user-specific
 *.sublime-workspace
+*.sublime-project
 
-# project files should be checked into the repository, unless a significant
-# proportion of contributors will probably not be using SublimeText
-# *.sublime-project
+# Merge leftovers
+*.orig
 
 # =========================
 # Dub
@@ -215,3 +215,4 @@ test-results/
 *.visualdproj
 *.exe
 *.exe_cv
+
