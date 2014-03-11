@@ -5,7 +5,7 @@ import components;
 import gl3n.linalg;
 import std.random;
 
-class TestObject : GameObject
+shared class TestObject : GameObject
 {
 	// Overridables
 	override void onUpdate()
@@ -55,24 +55,19 @@ class TestObject : GameObject
 	override void onCollision( GameObject other ) { }
 }
 
-class MovePointLight : GameObject
+shared class MovePointLight : GameObject
 {
 	// Overridables
 	override void onUpdate()
 	{
-
 		static float t = 0.0;
 		t += std.math.PI/2 * Time.deltaTime;
 	//	this.transform.position = vec3( 20*cos(t), 20*sin(t), this.transform.position.z );
-		this.transform.position.x = 10*cos(t);
-		this.transform.position.y = 10*sin(t);
-
-
+		//this.transform.position.x = 10*cos(t);
+		//this.transform.position.y = 10*sin(t);
 
 		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
 		this.transform.updateMatrix();
-
-		
 	}
 
 	/// Called on the draw cycle.
@@ -102,13 +97,20 @@ class RotateThing : GameObject
 			log( OutputType.Info, "Jump" );
 		}
 
+		int fib( int val )
+		{
+			if( val <= 0 )
+				return 1;
+			else
+				return fib( val - 1 ) + fib( val - 2 );
+		}
 
-		this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
-		//this.transform.rotation.rotatey( std.math.PI * Time.deltaTime);
-		//this.transform.rotation.rotatex( -std.math.PI * Time.deltaTime);
+		fib( 20 );
+
+		(cast()this.transform.rotation).rotatez( -std.math.PI * Time.deltaTime);
+		//(cast()this.transform.rotation).rotatey( std.math.PI * Time.deltaTime);
+		//(cast()this.transform.rotation).rotatex( -std.math.PI * Time.deltaTime);
 		this.transform.updateMatrix();
-		
-
 	}
 	
 	/// Called on the draw cycle.
