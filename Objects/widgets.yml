@@ -1,14 +1,16 @@
 -
-    Name: TestCamera
+    Name: Widget1
+    InstanceOf: SupaFab
+    Parent: DudeBrah
     Transform:
-        Position: !Vector3 0 0 30
+        Position: !Vector3 -8 0 25
         Scale: !Vector3 1 1 1
-        Rotation: !Vector3 0 0 0
-    Camera: hellsyes
+        Rotation: !Vector3 -90 0 0
 -
-    Name: Light
-    Light: !Light-Directional
-        Color: !Vector3 1 1 1
-        Direction: !Vector3 0 0 -1
-    Script:
-        ClassName: testobject.TestObject
+    Name: Widget2
+    InstanceOf: SupaFab
+    Parent: DudeBrah
+    Transform:
+        Position: !Vector3 -14 0 25
+        Scale: !Vector3 1 1 1
+        Rotation: !Vector3 -90 0 0

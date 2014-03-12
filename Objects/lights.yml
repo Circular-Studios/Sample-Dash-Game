@@ -1,0 +1,20 @@
+-
+    Name: AmbientLight
+    Light: !Light-Ambient
+        Color: !Vector3 .05 .05 .05
+-
+    Name: PointLight
+    Transform:
+        Position: !Vector3 0.0 0.0 -40
+    Script:
+        ClassName: testobject.MovePointLight
+    Light: !Light-Point
+        Color: !Vector3 1 1 1
+        Radius: 30
+-
+    Name: DirectionalLight
+    Light: !Light-Directional
+        Color: !Vector3 .4 .4 .4
+        Direction: !Vector3 0.0 -1.0 0.0
+    Script:
+        ClassName: testobject.TestObject
