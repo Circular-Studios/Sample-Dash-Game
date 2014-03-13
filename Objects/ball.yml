@@ -6,5 +6,3 @@
     Transform:
         Position: !Vector3 0.0 0.0 -30.0
         Scale: !Vector3 50 50 50
-    Light: !Light-Ambient
-        Color: !Vector3 1 1 1
