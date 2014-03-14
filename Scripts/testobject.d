@@ -107,7 +107,7 @@ class RotateThing : GameObject
 
 		fib( 20 );
 
-		this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
+		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
 		//(cast()this.transform.rotation).rotatey( std.math.PI * Time.deltaTime);
 		//(cast()this.transform.rotation).rotatex( -std.math.PI * Time.deltaTime);
 		this.transform.updateMatrix();
