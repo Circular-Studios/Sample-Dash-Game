@@ -1,7 +1,7 @@
 -
     Name: AmbientLight
     Light: !Light-Ambient
-        Color: !Vector3 .05 .05 .05
+        Color: !Vector3 1 1 1
 -
     Name: PointLight
     Transform:

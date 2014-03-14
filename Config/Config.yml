@@ -11,5 +11,5 @@ Graphics:
 Physics:
     Gravity: !Vector3 0.0 -10.0 0.0
 UserInterface:
-    FilePath: "/UI/index.html"
+    FilePath: "uitest.html"
     Scale: !Vector2 1.0 1.0
