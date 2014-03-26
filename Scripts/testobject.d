@@ -72,7 +72,7 @@ shared class MovePointLight : GameObject
 	override void onUpdate()
 	{
 		static float t = 0.0;
-		t += std.math.PI/2 * Time.deltaTime;
+		t += std.math.PI/2 * Time.deltaTime.seconds;
 	//	this.transform.position = vec3( 20*cos(t), 20*sin(t), this.transform.position.z );
 		//this.transform.position.x = 10*cos(t);
 		//this.transform.position.y = 10*sin(t);

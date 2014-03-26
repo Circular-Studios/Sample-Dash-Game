@@ -2,7 +2,7 @@ module testgame;
 import core;
 import graphics.graphics;
 import components.camera, components.userinterface;
-import utility.output, utility.input, utility.config;
+import utility;
 
 shared class TestGame : DGame
 {
@@ -28,6 +28,9 @@ shared class TestGame : DGame
 		w = Config.get!uint( "Display.Width" );
 		h = Config.get!uint( "Display.Height" );
 		ui = new shared UserInterface(w, h, Config.get!string( "UserInterface.FilePath" ) );
+
+		logInfo( "Starting Time: ", Time.totalTime );
+		scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 2.seconds );
 	}
 
 	override void onUpdate()
