@@ -18,3 +18,5 @@
         Direction: !Vector3 0.0 -1.0 0.0
     Script:
         ClassName: testobject.TestObject
+        Fields:
+            x: 10

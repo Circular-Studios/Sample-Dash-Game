@@ -5,8 +5,19 @@ import components;
 import gl3n.linalg;
 import std.random;
 
-shared class TestObject : GameObject
+class TOArgs
 {
+	int x;
+}
+
+shared class TestObject : GameObjectInit!TOArgs
+{
+	override void onInitialize( TOArgs args )
+	{
+		import std.stdio;
+		writeln( args.x );
+	}
+
 	// Overridables
 	override void onUpdate()
 	{
@@ -79,7 +90,7 @@ shared class MovePointLight : GameObject
 }
 
 
-class RotateThing : GameObject
+shared class RotateThing : GameObject
 {
 	// Overridables
 	override void onUpdate()
