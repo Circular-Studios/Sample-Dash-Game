@@ -34,7 +34,6 @@ shared class TestObject : GameObjectInit!TOArgs
 			log( OutputType.Info, "Jump" );
 		}
 
-		this.transform.updateMatrix();
 		/*
 		auto liiiiight = (cast(DirectionalLight)this.light);
 
@@ -78,7 +77,6 @@ shared class MovePointLight : GameObject
 		//this.transform.position.y = 10*sin(t);
 
 		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
-		this.transform.updateMatrix();
 	}
 
 	/// Called on the draw cycle.
@@ -121,7 +119,6 @@ shared class RotateThing : GameObject
 		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
 		//(cast()this.transform.rotation).rotatey( std.math.PI * Time.deltaTime);
 		//(cast()this.transform.rotation).rotatex( -std.math.PI * Time.deltaTime);
-		this.transform.updateMatrix();
 	}
 	
 	/// Called on the draw cycle.
@@ -131,5 +128,3 @@ shared class RotateThing : GameObject
 	/// Called when the object collides with another object.
 	override void onCollision( GameObject other ) { }
 }
-
-
