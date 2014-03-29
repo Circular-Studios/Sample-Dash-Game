@@ -6,7 +6,7 @@ import utility;
 
 shared class TestGame : DGame
 {
-	GameObjectCollection goc;
+	Scene scene;
 	UserInterface ui;
 	Camera cam;
 	
@@ -17,10 +17,10 @@ shared class TestGame : DGame
 		Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = GameState.Quit; } );
 		Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = GameState.Reset; } );
 
-		goc = new shared GameObjectCollection;
-		goc.loadObjects( "" );
+		scene = new shared Scene;
+		scene.loadObjects( "" );
 
-		auto camobj = goc[ "TestCamera" ];
+		auto camobj = scene[ "TestCamera" ];
 		//camobj.transform.rotation.rotatex( -std.math.PI_4 );
 		Graphics.setCamera( camobj.camera );
 
@@ -35,14 +35,16 @@ shared class TestGame : DGame
 
 	override void onUpdate()
 	{
-		goc.apply( go => go.update(), true );
+		foreach( obj; scene )
+			obj.update();
 
 		ui.update();
 	}
 	
 	override void onDraw()
 	{
-		goc.apply( go => go.draw() );
+		foreach( obj; scene )
+			obj.update();
 
 		ui.draw();
 
@@ -51,8 +53,9 @@ shared class TestGame : DGame
 	override void onShutdown()
 	{
 		logInfo( "Shutting down..." );
-		goc.apply( go => go.shutdown() );
-		goc.clearObjects();
+		foreach( obj; scene )
+			obj.shutdown();
+		scene.clear();
 
 		ui.shutdown();
 	}
