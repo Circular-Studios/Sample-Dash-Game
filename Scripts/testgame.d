@@ -28,8 +28,7 @@ shared class TestGame : DGame
 		h = Config.get!uint( "Display.Height" );
 		ui = new shared UserInterface(w, h, Config.get!string( "UserInterface.FilePath" ) );
 
-		logInfo( "Starting Time: ", Time.totalTime );
-		scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 2.seconds );
+		scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
 	}
 
 	override void onUpdate()
