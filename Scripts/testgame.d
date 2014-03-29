@@ -33,19 +33,12 @@ shared class TestGame : DGame
 
 	override void onUpdate()
 	{
-		foreach( obj; activeScene )
-			obj.update();
-
 		ui.update();
 	}
 	
 	override void onDraw()
 	{
-		foreach( obj; activeScene )
-			obj.draw();
-
 		ui.draw();
-
 	}
 
 	override void onShutdown()
@@ -54,6 +47,7 @@ shared class TestGame : DGame
 		foreach( obj; activeScene )
 			obj.shutdown();
 		activeScene.clear();
+		activeScene = null;
 
 		ui.shutdown();
 	}
