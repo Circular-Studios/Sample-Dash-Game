@@ -18,10 +18,7 @@ shared class TestGame : DGame
 
 		activeScene = new shared Scene;
 		activeScene.loadObjects( "" );
-
-		auto camobj = activeScene[ "TestCamera" ];
-		//camobj.transform.rotation.rotatex( -std.math.PI_4 );
-		Graphics.setCamera( camobj.camera );
+		activeScene.camera = activeScene[ "TestCamera" ].camera;
 
 		uint w, h;
 		w = Config.get!uint( "Display.Width" );
