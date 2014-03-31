@@ -23,8 +23,8 @@
 		"UI/",],
 	"importPaths": [ "Scripts/" ],
 	"targetType": "executable",
-	"targetPath": "Binaries/",
-
+	"targetPath": "Binaries",
+	"lflags-linux" : ["./Awesomium.so"],
 	"libs-windows": [
 		"Awesomium",
 		"gdi32", "ole32", "kernel32",
