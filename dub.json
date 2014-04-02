@@ -10,7 +10,7 @@
 		"Tyler Wozniak",
 		"Sean Brennan",
 		"Timothy Reynolds"
-		],
+	],
 	"dependencies": {
 		"dash": "~master" 
 	},
@@ -20,11 +20,12 @@
 		"Materials/",
 		"Objects/",
 		"Prefabs/",
-		"UI/",],
+		"UI/",
+	],
 	"importPaths": [ "Scripts/" ],
 	"targetType": "executable",
-	"targetPath": "Binaries/",
-
+	"targetPath": "Binaries",
+	"lflags-linux" : [ "./libawesomium-1.6.5.so" ],
 	"libs-windows": [
 		"Awesomium",
 		"gdi32", "ole32", "kernel32",
