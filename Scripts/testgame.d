@@ -13,8 +13,8 @@ shared class TestGame : DGame
     {
         logInfo( "Initializing TestGame..." );
 
-        Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = GameState.Quit; } );
-        Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = GameState.Reset; } );
+        Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = EngineState.Quit; } );
+        Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = EngineState.Reset; } );
         Input.addKeyDownEvent( Keyboard.MouseLeft, kc => logInfo( "Current mouse pos: ", Input.getMousePos() ) );
 
         activeScene = new shared Scene;
@@ -26,7 +26,7 @@ shared class TestGame : DGame
         h = Config.get!uint( "Display.Height" );
         ui = new shared UserInterface(w, h, Config.get!string( "UserInterface.FilePath" ) );
 
-       // scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
+        //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
     }
 
     override void onUpdate()
