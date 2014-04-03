@@ -7,124 +7,124 @@ import std.random;
 
 class TOArgs
 {
-	int x;
+    int x;
 }
 
 shared class TestObject : GameObjectInit!TOArgs
 {
-	override void onInitialize( TOArgs args )
-	{
-		import std.stdio;
-		writeln( args.x );
-	}
+    override void onInitialize( TOArgs args )
+    {
+        import std.stdio;
+        writeln( args.x );
+    }
 
-	// Overridables
-	override void onUpdate()
-	{
-		if( Input.getState( "Forward" ) )
-		{
-			log( OutputType.Info, "Forward" );
-		}
-		if( Input.getState( "Backward" ) )
-		{
-			log( OutputType.Info, "Backward" );
-		}
-		if( Input.getState( "Jump" ) )
-		{
-			log( OutputType.Info, "Jump" );
-		}
+    // Overridables
+    override void onUpdate()
+    {
+        if( Input.getState( "Forward" ) )
+        {
+            log( OutputType.Info, "Forward" );
+        }
+        if( Input.getState( "Backward" ) )
+        {
+            log( OutputType.Info, "Backward" );
+        }
+        if( Input.getState( "Jump" ) )
+        {
+            log( OutputType.Info, "Jump" );
+        }
 
-		/*
-		auto liiiiight = (cast(DirectionalLight)this.light);
+        /*
+        auto liiiiight = (cast(DirectionalLight)this.light);
 
-		// If you were actually thinking about doing this in your game, please don't.
-		static float red = 0.0f;
-		static float blu = 50.0f;
-		static float gre = 100.0f;
-		static float redMod = 0.1f;
-		static float bluMod = 0.1f;
-		static float greMod = 0.1f;
+        // If you were actually thinking about doing this in your game, please don't.
+        static float red = 0.0f;
+        static float blu = 50.0f;
+        static float gre = 100.0f;
+        static float redMod = 0.1f;
+        static float bluMod = 0.1f;
+        static float greMod = 0.1f;
 
-		// Change color direction
-		if(red >= 100 || red < 0) redMod = -redMod;
-		if(blu >= 100 || blu < 0) bluMod = -bluMod;
-		if(gre >= 100 || gre < 0) greMod = -greMod;
-	
-		red += redMod;
-		blu += bluMod;
-		gre += greMod;
+        // Change color direction
+        if(red >= 100 || red < 0) redMod = -redMod;
+        if(blu >= 100 || blu < 0) bluMod = -bluMod;
+        if(gre >= 100 || gre < 0) greMod = -greMod;
+    
+        red += redMod;
+        blu += bluMod;
+        gre += greMod;
 
-		liiiiight.color = vec3(red/100.0f, blu/100.0f, gre/100.0f); */
-	}
+        liiiiight.color = vec3(red/100.0f, blu/100.0f, gre/100.0f); */
+    }
 
-	/// Called on the draw cycle.
-	override void onDraw() { }
-	/// Called on shutdown.
-	override void onShutdown() { }
-	/// Called when the object collides with another object.
-	override void onCollision( GameObject other ) { }
+    /// Called on the draw cycle.
+    override void onDraw() { }
+    /// Called on shutdown.
+    override void onShutdown() { }
+    /// Called when the object collides with another object.
+    override void onCollision( GameObject other ) { }
 }
 
 shared class MovePointLight : GameObject
 {
-	// Overridables
-	override void onUpdate()
-	{
-		static float t = 0.0;
-		t += std.math.PI/2 * Time.deltaTime.seconds;
-	//	this.transform.position = vec3( 20*cos(t), 20*sin(t), this.transform.position.z );
-		//this.transform.position.x = 10*cos(t);
-		//this.transform.position.y = 10*sin(t);
+    // Overridables
+    override void onUpdate()
+    {
+        static float t = 0.0;
+        t += std.math.PI/2 * Time.deltaTime.seconds;
+    //  this.transform.position = vec3( 20*cos(t), 20*sin(t), this.transform.position.z );
+        //this.transform.position.x = 10*cos(t);
+        //this.transform.position.y = 10*sin(t);
 
-		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
-	}
+        //this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
+    }
 
-	/// Called on the draw cycle.
-	override void onDraw() { }
-	/// Called on shutdown.
-	override void onShutdown() { }
-	/// Called when the object collides with another object.
-	override void onCollision( GameObject other ) { }
+    /// Called on the draw cycle.
+    override void onDraw() { }
+    /// Called on shutdown.
+    override void onShutdown() { }
+    /// Called when the object collides with another object.
+    override void onCollision( GameObject other ) { }
 }
 
 
 shared class RotateThing : GameObject
 {
-	// Overridables
-	override void onUpdate()
-	{
-		if( Input.getState( "Forward" ) )
-		{
-			log( OutputType.Info, "Forward" );
-		}
-		if( Input.getState( "Backward" ) )
-		{
-			log( OutputType.Info, "Backward" );
-		}
-		if( Input.getState( "Jump" ) )
-		{
-			log( OutputType.Info, "Jump" );
-		}
+    // Overridables
+    override void onUpdate()
+    {
+        if( Input.getState( "Forward" ) )
+        {
+            log( OutputType.Info, "Forward" );
+        }
+        if( Input.getState( "Backward" ) )
+        {
+            log( OutputType.Info, "Backward" );
+        }
+        if( Input.getState( "Jump" ) )
+        {
+            log( OutputType.Info, "Jump" );
+        }
 
-		int fib( int val )
-		{
-			if( val <= 0 )
-				return 1;
-			else
-				return fib( val - 1 ) + fib( val - 2 );
-		}
+        int fib( int val )
+        {
+            if( val <= 0 )
+                return 1;
+            else
+                return fib( val - 1 ) + fib( val - 2 );
+        }
 
-		fib( 20 );
+        fib( 20 );
 
-		//this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
-		//(cast()this.transform.rotation).rotatey( std.math.PI * Time.deltaTime);
-		//(cast()this.transform.rotation).rotatex( -std.math.PI * Time.deltaTime);
-	}
-	
-	/// Called on the draw cycle.
-	override void onDraw() { }
-	/// Called on shutdown.
-	override void onShutdown() { }
-	/// Called when the object collides with another object.
-	override void onCollision( GameObject other ) { }
+        //this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
+        //(cast()this.transform.rotation).rotatey( std.math.PI * Time.deltaTime);
+        //(cast()this.transform.rotation).rotatex( -std.math.PI * Time.deltaTime);
+    }
+    
+    /// Called on the draw cycle.
+    override void onDraw() { }
+    /// Called on shutdown.
+    override void onShutdown() { }
+    /// Called when the object collides with another object.
+    override void onCollision( GameObject other ) { }
 }
