@@ -106,16 +106,6 @@ shared class RotateThing : GameObject
             log( OutputType.Info, "Jump" );
         }
 
-        int fib( int val )
-        {
-            if( val <= 0 )
-                return 1;
-            else
-                return fib( val - 1 ) + fib( val - 2 );
-        }
-
-        fib( 20 );
-
         //this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
         //(cast()this.transform.rotation).rotatey( std.math.PI * Time.deltaTime);
         //(cast()this.transform.rotation).rotatex( -std.math.PI * Time.deltaTime);
