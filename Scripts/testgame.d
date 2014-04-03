@@ -15,6 +15,7 @@ shared class TestGame : DGame
 
         Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = GameState.Quit; } );
         Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = GameState.Reset; } );
+        Input.addKeyDownEvent( Keyboard.MouseLeft, kc => logInfo( "Current mouse pos: ", Input.getMousePos() ) );
 
         activeScene = new shared Scene;
         activeScene.loadObjects( "" );
