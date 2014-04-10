@@ -10,17 +10,13 @@ Transform:
 Children:
   - Name: Widget1
     InstanceOf: SupaFab
-    Script:
-        ClassName: testobject.RotateThing
     Transform:
         Position: !Vector3 -8 0 25
         Scale: !Vector3 1 1 1
-        Rotation: !Vector3 -90 0 0
+        Rotation: !Vector3 0 0 0
   - Name: Widget2
     InstanceOf: SupaFab
-    Script:
-        ClassName: testobject.RotateThing
     Transform:
         Position: !Vector3 -14 0 25
         Scale: !Vector3 1 1 1
-        Rotation: !Vector3 -90 0 0
+        Rotation: !Vector3 0 0 0
