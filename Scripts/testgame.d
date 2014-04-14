@@ -42,7 +42,7 @@ shared class TestGame : DGame
     override void onShutdown()
     {
         logInfo( "Shutting down..." );
-        foreach( obj; activeScene )
+        foreach( obj; activeScene.objects )
             obj.shutdown();
         activeScene.clear();
         activeScene = null;
