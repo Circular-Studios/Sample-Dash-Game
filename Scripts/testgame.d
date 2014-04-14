@@ -4,6 +4,8 @@ import graphics.graphics;
 import components.camera, components.userinterface;
 import utility;
 
+import gl3n.linalg;
+
 shared class TestGame : DGame
 {
     UserInterface ui;
@@ -15,7 +17,7 @@ shared class TestGame : DGame
 
         Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = EngineState.Quit; } );
         Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = EngineState.Reset; } );
-        Input.addKeyDownEvent( Keyboard.MouseLeft, kc => logInfo( "Current mouse pos: ", Input.getMousePos() ) );
+        Input.addKeyDownEvent( Keyboard.MouseLeft, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
 
         activeScene = new shared Scene;
         activeScene.loadObjects( "" );
@@ -42,7 +44,7 @@ shared class TestGame : DGame
     override void onShutdown()
     {
         logInfo( "Shutting down..." );
-        foreach( obj; activeScene )
+        foreach( obj; activeScene.objects )
             obj.shutdown();
         activeScene.clear();
         activeScene = null;
