@@ -70,6 +70,13 @@ shared class MovePointLight : GameObject
     // Overridables
     override void onUpdate()
     {
+        static float t = 0.0;
+        t += std.math.PI/2 * Time.deltaTime;
+    //  this.transform.position = vec3( 20*cos(t), 20*sin(t), this.transform.position.z );
+        //this.transform.position.x = 10*cos(t);
+        //this.transform.position.y = 10*sin(t);
+
+        //this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime);
     }
 
     /// Called on the draw cycle.
@@ -98,6 +105,7 @@ shared class RotateThing : GameObject
         {
             log( OutputType.Info, "Jump" );
         }
+
         this.transform.rotation.rotatey( -std.math.PI * Time.deltaTime );
         //(cast()this.transform.rotation).rotatey( std.math.PI * Time.deltaTime);
         //(cast()this.transform.rotation).rotatex( -std.math.PI * Time.deltaTime);
