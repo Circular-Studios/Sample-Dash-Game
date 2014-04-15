@@ -98,7 +98,7 @@ shared class RotateThing : GameObject
         {
             log( OutputType.Info, "Jump" );
         }
-        this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime.fracSec.usecs/1000000.0f);
+        this.transform.rotation.rotatez( -std.math.PI * Time.deltaTime );
         //(cast()this.transform.rotation).rotatey( std.math.PI * Time.deltaTime);
         //(cast()this.transform.rotation).rotatex( -std.math.PI * Time.deltaTime);
     }
