@@ -5,9 +5,16 @@ Light: !Light-Ambient
 ---
 Name: DirectionalLight
 Light: !Light-Directional
-    Color: !Vector3 1 1 1
+    Color: !Vector3 .2 .2 .2
     Direction: !Vector3 0.0 -1.0 -1.0
+---
+Name: PointLight
+Light: !Light-Point
+    Color: !Vector3 1 0 0
+    Radius: 30
+    FalloffRate: .5
+Transform:
+    Position: !Vector3 0 -10 -40
 Script:
-    ClassName: testobject.TestObject
-    Fields:
-        x: 10
+    ClassName: testobject.RotateThing
+
