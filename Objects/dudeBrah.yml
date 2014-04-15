@@ -1,8 +1,6 @@
 ---
 Name: DudeBrah
 InstanceOf: FbxFab
-Script:
-    ClassName: testobject.RotateThing
 Transform:
     Position: !Vector3 -10.0 -20.0 -50.0
     Scale: !Vector3 1 1 1
