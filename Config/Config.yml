@@ -1,5 +1,5 @@
 Game:
-    Verbosity: !Verbosity High
+    Verbosity: !Verbosity Debug
 Display:
     Fullscreen: false
     Height: 720

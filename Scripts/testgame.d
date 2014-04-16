@@ -13,7 +13,7 @@ shared class TestGame : DGame
     
     override void onInitialize()
     {
-        logInfo( "Initializing TestGame..." );
+        logDebug( "Initializing TestGame..." );
 
         Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = EngineState.Quit; } );
         Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = EngineState.Reset; } );
