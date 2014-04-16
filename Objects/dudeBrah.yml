@@ -2,19 +2,17 @@
 Name: DudeBrah
 InstanceOf: FbxFab
 Transform:
-    Position: !Vector3 0.0 0.0 0.0
     Scale: !Vector3 1 1 1
-    Rotation: !Vector3 0 0 0
 Children:
   - Name: Widget1
     InstanceOf: SupaFab
     Transform:
-        Position: !Vector3 -8 0 25
+        Position: !Vector3 -8 0 -25
         Scale: !Vector3 1 1 1
         Rotation: !Vector3 0 0 0
   - Name: Widget2
     InstanceOf: SupaFab
     Transform:
-        Position: !Vector3 -14 0 25
+        Position: !Vector3 -14 0 -25
         Scale: !Vector3 1 1 1
         Rotation: !Vector3 0 0 0

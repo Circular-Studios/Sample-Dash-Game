@@ -14,7 +14,7 @@ Light: !Light-Point
     Radius: 30
     FalloffRate: .5
 Transform:
-    Position: !Vector3 0 -10 -40
+    Position: !Vector3 0 -10 -10
 Script:
     ClassName: testobject.RotateThing
 

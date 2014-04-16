@@ -3,7 +3,7 @@ Name: Floor
 InstanceOf: Plane
 Transform:
     Scale: !Vector3 10 10 10
-    Position: !Vector3 0 -20 -40
+    Position: !Vector3 0 -20 -10
     Rotation: !Vector3 -90 0 0
 Children:
   - Name: Right

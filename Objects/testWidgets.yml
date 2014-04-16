@@ -5,7 +5,7 @@ Material: rootMat
 Script:
     ClassName: testobject.RotateThing
 Transform:
-    Position: !Vector3 0 0 -50
+    Position: !Vector3 0 0 -10
     Scale: !Vector3 1 1 1
     Rotation: !Vector3 0 0 0
 Children:

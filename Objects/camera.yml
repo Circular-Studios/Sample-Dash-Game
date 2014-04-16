@@ -7,4 +7,4 @@ Transform:
 Camera: 
     FOV: 59
     Near: .01
-    Far: 150
+    Far: 250
