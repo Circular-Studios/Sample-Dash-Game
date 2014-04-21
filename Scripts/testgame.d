@@ -6,6 +6,8 @@ import utility;
 
 import gl3n.linalg;
 
+mixin ContentImport;
+
 shared class TestGame : DGame
 {
     UserInterface ui;

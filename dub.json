@@ -30,5 +30,8 @@
 		"Awesomium",
 		"gdi32", "ole32", "kernel32",
 		"user32", "comctl32", "comdlg32"
-	]
+	],
+
+	"stringImportPaths": [ "./" ],
+	"versions": [ "ImportContent" ]
 }
