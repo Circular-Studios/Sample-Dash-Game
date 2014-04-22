@@ -23,15 +23,15 @@ shared class TestObject : GameObjectInit!TOArgs
     {
         if( Input.getState( "Forward" ) )
         {
-            log( OutputType.Info, "Forward" );
+            logNotice( "Forward" );
         }
         if( Input.getState( "Backward" ) )
         {
-            log( OutputType.Info, "Backward" );
+            logNotice( "Backward" );
         }
         if( Input.getState( "Jump" ) )
         {
-            log( OutputType.Info, "Jump" );
+            logNotice( "Jump" );
         }
 
         /*
@@ -95,15 +95,15 @@ shared class RotateThing : GameObject
     {
         if( Input.getState( "Forward" ) )
         {
-            log( OutputType.Info, "Forward" );
+            logNotice( "Forward" );
         }
         if( Input.getState( "Backward" ) )
         {
-            log( OutputType.Info, "Backward" );
+            logNotice( "Backward" );
         }
         if( Input.getState( "Jump" ) )
         {
-            log( OutputType.Info, "Jump" );
+            logNotice( "Jump" );
         }
 
         this.transform.rotation.rotatey( -std.math.PI * Time.deltaTime );
