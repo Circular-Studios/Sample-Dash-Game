@@ -27,7 +27,7 @@
 	"targetPath": "Binaries",
 	"lflags-linux" : [ "./libawesomium-1.6.5.so" ],
 	"libs-windows": [
-		"Awesomium",
+		"libcef",
 		"gdi32", "ole32", "kernel32",
 		"user32", "comctl32", "comdlg32"
 	]
