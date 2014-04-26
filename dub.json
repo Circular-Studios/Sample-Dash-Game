@@ -34,5 +34,12 @@
 	],
 
 	"stringImportPaths": [ "./" ],
-	"versions": [ "ImportContent" ]
+	"versions": [ "ImportContent" ],
+
+	"buildTypes": {
+		"release": {
+			"buildOptions": [ "releaseMode", "optimize", "inline" ],
+			"lflags-windows": [	"/EXETYPE:NT", "/SUBSYSTEM:WINDOWS" ]
+		}
+	}
 }
