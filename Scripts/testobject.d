@@ -12,10 +12,10 @@ class TOArgs
 
 shared class TestObject : Behavior!TOArgs
 {
-    override void onInitialize( TOArgs args )
+    override void onInitialize()
     {
         import std.stdio;
-        writeln( args.x );
+        writeln( initArgs.x );
     }
 
     // Overridables
