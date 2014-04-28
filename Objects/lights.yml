@@ -5,7 +5,7 @@ Light: !Light-Ambient
 ---
 Name: DirectionalLight
 Light: !Light-Directional
-    Color: !Vector3 .2 .2 .2
+    Color: !Vector3 .6 .6 .6
     Direction: !Vector3 0.0 -1.0 -1.0
 ---
 Name: PointLight
