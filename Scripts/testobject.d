@@ -10,12 +10,12 @@ class TOArgs
     int x;
 }
 
-shared class TestObject : GameObjectInit!TOArgs
+shared class TestObject : Behavior!TOArgs
 {
-    override void onInitialize( TOArgs args )
+    override void onInitialize()
     {
         import std.stdio;
-        writeln( args.x );
+        writeln( initArgs.x );
     }
 
     // Overridables
@@ -61,11 +61,9 @@ shared class TestObject : GameObjectInit!TOArgs
     override void onDraw() { }
     /// Called on shutdown.
     override void onShutdown() { }
-    /// Called when the object collides with another object.
-    override void onCollision( GameObject other ) { }
 }
 
-shared class MovePointLight : GameObject
+shared class MovePointLight : Behavior!()
 {
     // Overridables
     override void onUpdate()
@@ -83,13 +81,12 @@ shared class MovePointLight : GameObject
     override void onDraw() { }
     /// Called on shutdown.
     override void onShutdown() { }
-    /// Called when the object collides with another object.
-    override void onCollision( GameObject other ) { }
 }
 
 
-shared class RotateThing : GameObject
+shared class RotateThing : Behavior!()
 {
+    alias owner this;
     // Overridables
     override void onUpdate()
     {
@@ -115,6 +112,4 @@ shared class RotateThing : GameObject
     override void onDraw() { }
     /// Called on shutdown.
     override void onShutdown() { }
-    /// Called when the object collides with another object.
-    override void onCollision( GameObject other ) { }
 }
