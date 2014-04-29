@@ -4,6 +4,8 @@ import graphics.graphics;
 import components.camera, components.userinterface;
 import utility;
 
+import testobject;
+
 import gl3n.linalg;
 
 mixin ContentImport;
@@ -29,6 +31,8 @@ shared class TestGame : DGame
         w = config.find!uint( "Display.Width" );
         h = config.find!uint( "Display.Height" );
         ui = new shared UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
+
+        auto obj = GameObject.createWithBehavior!TestObject;
 
         //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
     }
