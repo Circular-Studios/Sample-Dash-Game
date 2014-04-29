@@ -25,10 +25,21 @@
 	"importPaths": [ "Scripts/" ],
 	"targetType": "executable",
 	"targetPath": "Binaries",
+	"workingDirectory": "Binaries",
 	"lflags-linux" : [ "./libawesomium-1.6.5.so" ],
 	"libs-windows": [
 		"libcef",
 		"gdi32", "ole32", "kernel32",
 		"user32", "comctl32", "comdlg32"
-	]
+	],
+
+	"stringImportPaths": [ "./" ],
+	"versions": [ "ImportContent" ],
+
+	"buildTypes": {
+		"release": {
+			"buildOptions": [ "releaseMode", "optimize", "inline" ],
+			"lflags-windows": [	"/EXETYPE:NT", "/SUBSYSTEM:WINDOWS" ]
+		}
+	}
 }

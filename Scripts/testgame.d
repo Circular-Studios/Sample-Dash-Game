@@ -4,6 +4,10 @@ import graphics.graphics;
 import components.camera, components.userinterface;
 import utility;
 
+import gl3n.linalg;
+
+mixin ContentImport;
+
 shared class TestGame : DGame
 {
     UserInterface ui;
@@ -11,20 +15,20 @@ shared class TestGame : DGame
     
     override void onInitialize()
     {
-        logInfo( "Initializing TestGame..." );
+        logDebug( "Initializing TestGame..." );
 
         Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = EngineState.Quit; } );
         Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = EngineState.Reset; } );
-        Input.addKeyDownEvent( Keyboard.MouseLeft, kc => logInfo( "Current mouse pos: ", Input.getMousePos() ) );
+        Input.addKeyDownEvent( Keyboard.MouseLeft, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
 
         activeScene = new shared Scene;
         activeScene.loadObjects( "" );
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
         uint w, h;
-        w = Config.get!uint( "Display.Width" );
-        h = Config.get!uint( "Display.Height" );
-        ui = new shared UserInterface(w, h, Config.get!string( "UserInterface.FilePath" ) );
+        w = config.find!uint( "Display.Width" );
+        h = config.find!uint( "Display.Height" );
+        ui = new shared UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
 
         //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
     }
@@ -42,7 +46,7 @@ shared class TestGame : DGame
     override void onShutdown()
     {
         logInfo( "Shutting down..." );
-        foreach( obj; activeScene )
+        foreach( obj; activeScene.objects )
             obj.shutdown();
         activeScene.clear();
         activeScene = null;

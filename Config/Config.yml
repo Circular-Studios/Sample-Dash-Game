@@ -1,5 +1,11 @@
-Game:
-    Verbosity: !Verbosity High
+Logging:
+    FilePath: "dash.log"
+    Debug:
+        OutputVerbosity: !Verbosity Debug
+        LoggingVerbosity: !Verbosity Debug
+    Release:
+        OutputVerbosity: !Verbosity Medium
+        LoggingVerbosity: !Verbosity Medium
 Display:
     Fullscreen: false
     Height: 720
