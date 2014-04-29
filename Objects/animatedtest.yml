@@ -1,5 +1,0 @@
----
-Name: DudeBrah
-InstanceOf: FbxFab
-Transform:
-    Scale: !Vector3 1 1 1

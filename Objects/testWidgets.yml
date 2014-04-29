@@ -2,18 +2,18 @@
 Name: Root
 InstanceOf: SupaFab
 Material: rootMat
-Behaviors:
-  - Class: testobject.RotateThing
+#Behaviors:
+#  - Class: testobject.RotateThing
 Transform:
     Position: !Vector3 0 0 0
     Scale: !Vector3 1 1 1
-    Rotation: !Vector3 0 0 0
+    Rotation: !Vector3 -90 0 0
 Children:
   - Name: Child1
     InstanceOf: SupaFab
     Material: child1Mat
-    Behaviors:
-      - Class: testobject.RotateThing
+#    Behaviors:
+#      - Class: testobject.RotateThing
     Transform:
         Position: !Vector3 20 0 0
         Scale: !Vector3 1 1 1
@@ -22,18 +22,25 @@ Children:
       - Name: Child2
         InstanceOf: SupaFab
         Material: child2Mat
-        Behaviors:
-          - Class: testobject.RotateThing
+#        Behaviors:
+#          - Class: testobject.RotateThing
         Transform:
             Position: !Vector3 0 10 0
             Scale: !Vector3 1 1 1
             Rotation: !Vector3 0 0 0
   - Name: Child3
-    Behaviors:
-      - Class: testobject.RotateThing
+#    Behaviors:
+#      - Class: testobject.RotateThing
     InstanceOf: SupaFab
     Material: child3Mat
     Transform:
         Position: !Vector3 -10 0 0
         Scale: !Vector3 1 1 1
         Rotation: !Vector3 0 0 0
+---
+Name: SuperWidget
+InstanceOf: SupaFab
+Transform:
+  Position: !Vector3 0 -50 0
+  Scale: !Vector3 10 10 10
+  Rotation: !Vector3 90 0 0
