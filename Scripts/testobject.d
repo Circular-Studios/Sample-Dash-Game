@@ -10,7 +10,7 @@ class TOArgs
     int x;
 }
 
-shared class TestObject : Behavior!TOArgs
+class TestObject : Behavior!TOArgs
 {
     override void onInitialize()
     {
@@ -41,7 +41,7 @@ shared class TestObject : Behavior!TOArgs
     override void onShutdown() { }
 }
 
-shared class RotateThing : Behavior!()
+class RotateThing : Behavior!()
 {
     alias owner this;
     // Overridables
