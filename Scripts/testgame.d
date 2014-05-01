@@ -19,9 +19,9 @@ class TestGame : DGame
     {
         logDebug( "Initializing TestGame..." );
 
-        Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = EngineState.Quit; } );
-        Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = EngineState.Reset; } );
-        Input.addKeyDownEvent( Keyboard.MouseLeft, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
+        Input.addKeyDownEvent( Keys.Escape, ( uint kc ) { currentState = EngineState.Quit; } );
+        Input.addKeyDownEvent( Keys.F5, ( uint kc ) { currentState = EngineState.Reset; } );
+        Input.addKeyDownEvent( Keys.MouseLeft, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
         Input.addAxisEvent( Axes.MouseScroll, ( ac, newVal ) => logInfo( "New Scroll: ", newVal ) );
 
         activeScene = new Scene;
