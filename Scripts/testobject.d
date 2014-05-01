@@ -69,7 +69,7 @@ class RotateThing : Behavior!()
     override void onShutdown() { }
 }
 
-shared class RotateCamera : Behavior!()
+class RotateCamera : Behavior!()
 {
     alias owner this;
     // Overridables
