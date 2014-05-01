@@ -51,8 +51,3 @@ Transform:
   Position: !Vector3 -100 -50 0
   Scale: !Vector3 10 10 10
   Rotation: !Vector3 90 0 0
----
-Name: DudeBrah
-InstanceOf: FbxFab
-Transform:
-    Scale: !Vector3 1 1 1
