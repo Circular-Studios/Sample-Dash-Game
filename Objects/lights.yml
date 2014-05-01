@@ -15,6 +15,6 @@ Light: !Light-Point
     FalloffRate: .5
 Transform:
     Position: !Vector3 0 -10 -10
-Script:
-    ClassName: testobject.RotateThing
+Behaviors:
+  - Class: testobject.RotateThing
 
