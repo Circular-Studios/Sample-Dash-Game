@@ -10,7 +10,7 @@ import gl3n.linalg;
 
 mixin ContentImport;
 
-shared class TestGame : DGame
+class TestGame : DGame
 {
     UserInterface ui;
     Camera cam;
@@ -23,16 +23,16 @@ shared class TestGame : DGame
         Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = EngineState.Reset; } );
         Input.addKeyDownEvent( Keyboard.MouseLeft, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
 
-        activeScene = new shared Scene;
+        activeScene = new Scene;
         activeScene.loadObjects( "" );
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
         uint w, h;
         w = config.find!uint( "Display.Width" );
         h = config.find!uint( "Display.Height" );
-        ui = new shared UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
+        ui = new UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
 
-        auto obj = GameObject.createWithBehavior!TestObject;
+        //auto obj = GameObject.createWithBehavior!TestObject;
 
         //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
     }
