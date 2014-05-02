@@ -68,3 +68,18 @@ class RotateThing : Behavior!()
     /// Called on shutdown.
     override void onShutdown() { }
 }
+
+class RotateCamera : Behavior!()
+{
+    alias owner this;
+    // Overridables
+    override void onUpdate()
+    {
+        this.transform.rotation.rotatex( -std.math.PI * Time.deltaTime );
+    }
+    
+    /// Called on the draw cycle.
+    override void onDraw() { }
+    /// Called on shutdown.
+    override void onShutdown() { }
+}
