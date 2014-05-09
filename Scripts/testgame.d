@@ -23,6 +23,13 @@ class TestGame : DGame
         Keyboard.addButtonDownEvent( Keyboard.Buttons.F5, ( kc ) { currentState = EngineState.Reset; } );
         Mouse.addButtonDownEvent( Mouse.Buttons.Left, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
         Mouse.addAxisEvent( Mouse.Axes.ScrollWheel, ( ac, newVal ) => logInfo( "New Scroll: ", newVal ) );
+        Mouse.addButtonDownEvent( Mouse.Buttons.Right, ( kc )
+            {
+                static uint x = 0;
+                auto newObj = Prefabs[ "SupaFab" ].createInstance();
+                newObj.transform.position.x = x++;
+                activeScene.addChild( newObj );
+            } );
 
         activeScene = new Scene;
         activeScene.loadObjects( "" );
