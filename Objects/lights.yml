@@ -3,3 +3,15 @@ Name: DirectionalLight
 Light: !Light-Directional
     Color: !Vector3 .6 .6 .6
     Direction: !Vector3 -0.5 -1.0 0.0
+    CastShadows: True
+---
+Name: PointLight
+Transform:
+    Position: !Vector3 0 30 0
+    Scale: 1 1 1
+    Rotation: 0 0 0
+Light: !Light-Point
+    Color: !Vector3 1 0 0
+    Radius: 50
+    FalloffRate: 0.5
+    CastShadows: True
