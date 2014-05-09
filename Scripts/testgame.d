@@ -70,4 +70,9 @@ class TestGame : DGame
     {
         logInfo( "Resetting..." );
     }
+
+    override void onRefresh()
+    {
+        logInfo( "Refreshing..." );
+    }
 }
