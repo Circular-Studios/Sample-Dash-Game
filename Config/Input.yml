@@ -1,6 +1,18 @@
-Forward:
+Up:
     Keyboard: W
-Backward:
+Down:
     Keyboard: S
-Jump:
-    Keyboard: Space
+Left:
+    Keyboard: A
+Right:
+    Keyboard: D
+LookLeft:
+    Keyboard: Q
+LookRight:
+    Keyboard: E
+ResetGame:
+    Keyboard: F5
+ResetCamera:
+    Keyboard: F9
+QuitToDesktop:
+    Keyboard: Escape

@@ -19,21 +19,7 @@ class TestObject : Behavior!TOArgs
     }
 
     // Overridables
-    override void onUpdate()
-    {
-        if( Input.getState( "Forward" ) )
-        {
-            logNotice( "Forward" );
-        }
-        if( Input.getState( "Backward" ) )
-        {
-            logNotice( "Backward" );
-        }
-        if( Input.getState( "Jump" ) )
-        {
-            logNotice( "Jump" );
-        }
-    }
+    override void onUpdate() { }
 
     /// Called on the draw cycle.
     override void onDraw() { }
@@ -47,19 +33,6 @@ class RotateThing : Behavior!()
     // Overridables
     override void onUpdate()
     {
-        if( Input.getState( "Forward" ) )
-        {
-            logNotice( "Forward" );
-        }
-        if( Input.getState( "Backward" ) )
-        {
-            logNotice( "Backward" );
-        }
-        if( Input.getState( "Jump" ) )
-        {
-            logNotice( "Jump" );
-        }
-
         this.transform.rotation.rotatey( -std.math.PI * Time.deltaTime );
     }
     

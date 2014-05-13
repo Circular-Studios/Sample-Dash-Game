@@ -1,5 +1,5 @@
 module testgame;
-import core;
+import core, camera;
 import graphics.graphics;
 import components.camera, components.userinterface;
 import utility;
@@ -13,16 +13,13 @@ mixin ContentImport;
 class TestGame : DGame
 {
     UserInterface ui;
-    Camera cam;
     
     override void onInitialize()
     {
         logDebug( "Initializing TestGame..." );
-
-        Keyboard.addButtonDownEvent( Keyboard.Buttons.Escape, ( kc ) { currentState = EngineState.Quit; } );
-        Keyboard.addButtonDownEvent( Keyboard.Buttons.F5, ( kc ) { currentState = EngineState.Reset; } );
+        Input.addButtonDownEvent( "QuitToDesktop", ( uint kc ) { currentState = EngineState.Quit; } );
+        Input.addButtonDownEvent( "ResetGame", ( uint kc ) { currentState = EngineState.Reset; } );
         Mouse.addButtonDownEvent( Mouse.Buttons.Left, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
-        Mouse.addAxisEvent( Mouse.Axes.ScrollWheel, ( ac, newVal ) => logInfo( "New Scroll: ", newVal ) );
         Mouse.addButtonDownEvent( Mouse.Buttons.Right, ( kc )
             {
                 static uint x = 0;
@@ -33,16 +30,18 @@ class TestGame : DGame
 
         activeScene = new Scene;
         activeScene.loadObjects( "" );
-        activeScene.camera = activeScene[ "TestCamera" ].camera;
 
-        uint w, h;
-        w = config.find!uint( "Display.Width" );
-        h = config.find!uint( "Display.Height" );
-        ui = new UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
+        // make a camera
+        auto cam = activeScene[ "Camera" ].behaviors.get!AdvancedCamera;
+        activeScene.camera = cam.camera;
 
         //auto obj = GameObject.createWithBehavior!TestObject;
 
         //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
+        uint w, h;
+        w = config.find!uint( "Display.Width" );
+        h = config.find!uint( "Display.Height" );
+        ui = new UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
     }
 
     override void onUpdate()
