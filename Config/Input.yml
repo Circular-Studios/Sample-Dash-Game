@@ -1,6 +1,26 @@
 Forward:
     Keyboard: W
+Left:
+    Keyboard: A
+Right:
+    Keyboard: D
 Backward:
     Keyboard: S
+Up:
+    Keyboard: E
+Down:
+    Keyboard: Q
 Jump:
     Keyboard: Space
+Modify:
+    Keyboard: Shift
+Toggle:
+    Keyboard: Tab
+LookUp:
+    Keyboard: Up
+LookRight:
+    Keyboard: Right
+LookLeft:
+    Keyboard: Left
+LookDown:
+    Keyboard: Down

@@ -1,0 +1,10 @@
+---
+Name: ModBuild
+Diffuse: modbuild_d
+Normal: modbuild_n
+Specular: modbuild_s
+---
+Name: FuelCan
+Diffuse: fuel_d
+Normal: fuel_n
+Specular: fuel_s

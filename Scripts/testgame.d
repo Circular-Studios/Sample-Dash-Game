@@ -1,10 +1,6 @@
 module testgame;
-import core;
-import graphics.graphics;
-import components.camera, components.userinterface;
-import utility;
-
-import testobject;
+import core, graphics, components, utility;
+import propfactory;
 
 import gl3n.linalg;
 
@@ -23,13 +19,6 @@ class TestGame : DGame
         Keyboard.addButtonDownEvent( Keyboard.Buttons.F5, ( kc ) { currentState = EngineState.Reset; } );
         Mouse.addButtonDownEvent( Mouse.Buttons.Left, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
         Mouse.addAxisEvent( Mouse.Axes.ScrollWheel, ( ac, newVal ) => logInfo( "New Scroll: ", newVal ) );
-        Mouse.addButtonDownEvent( Mouse.Buttons.Right, ( kc )
-            {
-                static uint x = 0;
-                auto newObj = Prefabs[ "SupaFab" ].createInstance();
-                newObj.transform.position.x = x++;
-                activeScene.addChild( newObj );
-            } );
 
         activeScene = new Scene;
         activeScene.loadObjects( "" );
@@ -40,9 +29,8 @@ class TestGame : DGame
         h = config.find!uint( "Display.Height" );
         ui = new UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
 
-        //auto obj = GameObject.createWithBehavior!TestObject;
-
-        //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
+        auto wall = PropFactory.createBuildingPiece("hangar_door", vec3( 0, 0, -5 ));
+        activeScene.addChild(wall);
     }
 
     override void onUpdate()
