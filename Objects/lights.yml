@@ -1,5 +1,5 @@
 ---
 Name: DirectionalLight
-Light: !Light-Directional
+DirectionalLight:
     Color: !Vector3 .6 .6 .6
     Direction: !Vector3 -0.5 -1.0 0.0

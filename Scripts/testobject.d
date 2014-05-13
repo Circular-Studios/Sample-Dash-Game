@@ -5,21 +5,18 @@ import components;
 import gl3n.linalg;
 import std.random;
 
-class TOArgs
-{
-    int x;
-}
+mixin( registerComponents!q{testobject} );
 
-class TestObject : Behavior!TOArgs
+@yamlEntry()
+class TestObject : YamlComponent
 {
-    override void onInitialize()
+    override void initialize()
     {
-        import std.stdio;
-        writeln( initArgs.x );
+        
     }
 
     // Overridables
-    override void onUpdate()
+    override void update()
     {
         if( Input.getState( "Forward" ) )
         {
@@ -35,17 +32,25 @@ class TestObject : Behavior!TOArgs
         }
     }
 
-    /// Called on the draw cycle.
-    override void onDraw() { }
     /// Called on shutdown.
-    override void onShutdown() { }
+    override void shutdown() { }
 }
 
-class RotateThing : Behavior!()
+@yamlEntry()
+class RotateThing : YamlComponent
 {
     alias owner this;
+
+    @field( "X" )
+    float x;
+
+    override void initialize()
+    {
+        logInfo( "Init RotateThing X: ", x );
+    }
+
     // Overridables
-    override void onUpdate()
+    override void update()
     {
         if( Input.getState( "Forward" ) )
         {
@@ -63,23 +68,20 @@ class RotateThing : Behavior!()
         this.transform.rotation.rotatey( -std.math.PI * Time.deltaTime );
     }
     
-    /// Called on the draw cycle.
-    override void onDraw() { }
     /// Called on shutdown.
-    override void onShutdown() { }
+    override void shutdown() { }
 }
 
-class RotateCamera : Behavior!()
+@yamlEntry()
+class RotateCamera : YamlComponent
 {
     alias owner this;
     // Overridables
-    override void onUpdate()
+    override void update()
     {
         this.transform.rotation.rotatex( -std.math.PI * Time.deltaTime );
     }
     
-    /// Called on the draw cycle.
-    override void onDraw() { }
     /// Called on shutdown.
-    override void onShutdown() { }
+    override void shutdown() { }
 }
