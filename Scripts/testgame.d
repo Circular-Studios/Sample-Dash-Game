@@ -18,7 +18,6 @@ class TestGame : DGame
         Keyboard.addButtonDownEvent( Keyboard.Buttons.Escape, ( kc ) { currentState = EngineState.Quit; } );
         Keyboard.addButtonDownEvent( Keyboard.Buttons.F5, ( kc ) { currentState = EngineState.Reset; } );
         Mouse.addButtonDownEvent( Mouse.Buttons.Left, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
-        Mouse.addAxisEvent( Mouse.Axes.ScrollWheel, ( ac, newVal ) => logInfo( "New Scroll: ", newVal ) );
 
         activeScene = new Scene;
         activeScene.loadObjects( "" );
@@ -29,10 +28,10 @@ class TestGame : DGame
         h = config.find!uint( "Display.Height" );
         ui = new UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
 
-        //auto wall = PropFactory.buildingPiece("hangar_door", vec3( 0, 0, -5 ));
-        //activeScene.addChild(wall);
+        auto wall = PropFactory.buildingPiece("brick_door", vec3( 0, 0, -5 ));
+        activeScene.addChild(wall);
 
-        auto floor = PropFactory.texturedPlane( "BlackTile", 10, 10, 10 );
+        auto floor = PropFactory.texturedPlane( "GoldTile", 10, 10, 10 );
         activeScene.addChild( floor );
     }
 

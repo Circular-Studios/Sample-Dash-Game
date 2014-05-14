@@ -4,7 +4,9 @@ Behaviors:
     - Class: testcamera.TestCamera
       Fields:
         Height: 13
-        Speed: 20
+        Speed: 35
+        TurnSpeed: 60
+        JumpPower: 30
         Gravity: -100
 Transform:
     Position: !Vector3 0 0 40
@@ -17,5 +19,17 @@ Camera:
 ---
 Name: DirectionalLight
 Light: !Light-Directional
+    Color: !Vector3 .3 .3 .3
+    Direction: !Vector3 0 -1.0 0
+---
+Name: Ambient
+Light: !Light-Ambient
+    Color: !Vector3 .1 .1 .1
+---
+Name: PointLight1
+Light: !Light-Point
     Color: !Vector3 1 1 1
-    Direction: !Vector3 0 -1.0 1.0
+    Radius: 50
+    FalloffRate: 1
+Transform:
+    Position: !Vector3 20 15 0

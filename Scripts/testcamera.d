@@ -1,18 +1,20 @@
 module testcamera;
 import core, graphics, components, utility;
-import gl3n.linalg;
+import gl3n.linalg, gl3n.math;
 
 class CameraFields
 {
     float Height;
     float Speed;
+    float TurnSpeed;
+    float JumpPower;
     float Gravity;
 }
 
 class TestCamera : Behavior!CameraFields
 {
 private:
-    float height, speed, yvel, gravity;
+    float height, speed, turnSpeed, jumpPower, yvel, gravity;
     bool free;
 
 public:
@@ -21,12 +23,19 @@ public:
         height = initArgs.Height;
         speed = initArgs.Speed;
         gravity = initArgs.Gravity;
+        turnSpeed = initArgs.TurnSpeed.radians;
+        jumpPower = initArgs.JumpPower;
+
         owner.transform.position.y = height;
         yvel = 0;
 
         free = false;
 
-        Input.addButtonDownEvent( "Toggle", (uint kc) { logDebug("FREEDOM!"); free = !free; } );
+        Input.addButtonDownEvent( "Toggle", (uint kc) 
+        { 
+            logDebug("FREEDOM!"); 
+            free = !free;
+        } );
         Input.addButtonDownEvent( "Jump", &jump );
     }
 
@@ -79,7 +88,9 @@ public:
 
             moveVec.normalize;
             moveVec *= curSpeed * Time.deltaTime;
-            owner.transform.position += moveVec;
+            owner.transform.position += moveVec;            
+            
+
         }
         else
         {
@@ -114,6 +125,25 @@ public:
             moveVec.normalize;
             moveVec *= curSpeed * Time.deltaTime;
             owner.transform.position += moveVec;
+
+        }
+
+        if( Input.getState( "LookUp" ) && owner.transform.rotation.pitch < 60.radians )
+        {
+            owner.transform.rotation.rotate_axis( turnSpeed * Time.deltaTime, owner.transform.right );
+        }
+        else if( Input.getState( "LookDown" ) && owner.transform.rotation.pitch > -60.radians )
+        {
+            owner.transform.rotation.rotate_axis( -turnSpeed * Time.deltaTime, owner.transform.right  );
+        }
+
+        if( Input.getState( "LookRight" ) )
+        {
+            owner.transform.rotation.rotatey( -turnSpeed * Time.deltaTime );
+        }
+        else if( Input.getState( "LookLeft" ) )
+        {
+            owner.transform.rotation.rotatey( turnSpeed * Time.deltaTime );
         }
     }
 
@@ -123,7 +153,7 @@ public:
         logInfo( "Jump jump, the house is jumpin ");
         if( owner.transform.position.y <= height )
         {
-            yvel = speed * 1.75;
+            yvel = jumpPower;
         }
     }
 }
