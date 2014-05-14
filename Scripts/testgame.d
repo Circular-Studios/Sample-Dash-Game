@@ -32,7 +32,7 @@ class TestGame : DGame
         //auto wall = PropFactory.buildingPiece("hangar_door", vec3( 0, 0, -5 ));
         //activeScene.addChild(wall);
 
-        auto floor = PropFactory.texturedPlane( "GrayTile", 10, 10, 10 );
+        auto floor = PropFactory.texturedPlane( "BlackTile", 10, 10, 10 );
         activeScene.addChild( floor );
     }
 
