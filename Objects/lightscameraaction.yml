@@ -18,4 +18,4 @@ Camera:
 Name: DirectionalLight
 Light: !Light-Directional
     Color: !Vector3 1 1 1
-    Direction: !Vector3 -.3 -.7 -1.0
+    Direction: !Vector3 0 -1.0 .3

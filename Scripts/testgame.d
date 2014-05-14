@@ -29,8 +29,11 @@ class TestGame : DGame
         h = config.find!uint( "Display.Height" );
         ui = new UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
 
-        auto wall = PropFactory.createBuildingPiece("hangar_door", vec3( 0, 0, -5 ));
-        activeScene.addChild(wall);
+        //auto wall = PropFactory.buildingPiece("hangar_door", vec3( 0, 0, -5 ));
+        //activeScene.addChild(wall);
+
+        auto floor = PropFactory.texturedPlane( "GrayTile", 10, 10, 10 );
+        activeScene.addChild( floor );
     }
 
     override void onUpdate()

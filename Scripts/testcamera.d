@@ -24,8 +24,6 @@ public:
         owner.transform.position.y = height;
         yvel = 0;
 
-        logDebug( height, " ", speed, " ", gravity, " ", yvel );
-
         free = false;
 
         Input.addButtonDownEvent( "Toggle", (uint kc) { logDebug("FREEDOM!"); free = !free; } );
@@ -126,7 +124,6 @@ public:
         if( owner.transform.position.y <= height )
         {
             yvel = speed * 1.75;
-            logDebug( yvel );
         }
     }
 }

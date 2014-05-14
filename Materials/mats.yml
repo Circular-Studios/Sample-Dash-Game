@@ -8,3 +8,28 @@ Name: FuelCan
 Diffuse: fuel_d
 Normal: fuel_n
 Specular: fuel_s
+---
+Name: WoodFloor
+Diffuse: woodfloor_d
+Normal: woodfloor_n
+Specular: woodfloor_s
+---
+Name: GoldTile
+Diffuse: goldtile_d
+Normal: goldtile_n
+Specular: goldtile_s
+---
+Name: BrickFloor
+Diffuse: brickfloor_d
+Normal: brickfloor_n
+Specular: brickfloor_s
+---
+Name: BlackTile
+Diffuse: blacktile_d
+Normal: blacktile_n
+Specular: blacktile_s
+---
+Name: GrayTile
+Diffuse: graytile_d
+Normal: graytile_n
+Specular: graytile_s

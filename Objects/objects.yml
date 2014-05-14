@@ -1,3 +1,5 @@
 ---
 Name: TestObject
 InstanceOf: FuelCan
+Transform:
+    Position: !Vector3 -15 0 0
