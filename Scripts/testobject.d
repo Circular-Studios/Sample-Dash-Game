@@ -7,7 +7,7 @@ import std.random;
 
 mixin( registerComponents!q{testobject} );
 
-@yamlEntry()
+@yamlComponent()
 class TestObject : Component
 {
     override void initialize()
@@ -36,7 +36,7 @@ class TestObject : Component
     override void shutdown() { }
 }
 
-@yamlEntry()
+@yamlComponent()
 class RotateThing : Component
 {
     alias owner this;
@@ -72,7 +72,7 @@ class RotateThing : Component
     override void shutdown() { }
 }
 
-@yamlEntry()
+@yamlComponent()
 class RotateCamera : Component
 {
     alias owner this;
