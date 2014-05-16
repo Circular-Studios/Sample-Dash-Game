@@ -3,7 +3,7 @@
 	"description": "A sample D game built with Dash.",
 	"copyright": "2014",
 	"license": "MIT",
-	"authors": [ 
+	"authors": [
 		"Colden Cullen",
 		"Brandon Littell",
 		"Eric Christenson",
@@ -12,11 +12,11 @@
 		"Timothy Reynolds"
 	],
 	"dependencies": {
-		"dash": "~master" 
+		"dash": "~master"
 	},
-	"sourcePaths": [ 
+	"sourcePaths": [
 		"Scripts/",
-		"Config/", 
+		"Config/",
 		"Materials/",
 		"Objects/",
 		"Prefabs/",
@@ -34,10 +34,10 @@
 	],
 
 	"stringImportPaths": [ "./" ],
-	"versions": [ "ImportContent" ],
 
 	"buildTypes": {
 		"release": {
+			"versions": [ "EmbedContent" ],
 			"buildOptions": [ "releaseMode", "optimize", "inline" ],
 			"lflags-windows": [	"/EXETYPE:NT", "/SUBSYSTEM:WINDOWS" ]
 		}
