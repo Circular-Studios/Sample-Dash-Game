@@ -36,6 +36,13 @@ class TestObject : Component
     override void shutdown() { }
 }
 
+enum Color
+{
+    Empty,
+    White,
+    Black,
+}
+
 @yamlComponent()
 class RotateThing : Component
 {
@@ -43,10 +50,12 @@ class RotateThing : Component
 
     @field( "X" )
     float x;
+    @field( "Color" )
+    Color color;
 
     override void initialize()
     {
-        logInfo( "Init RotateThing X: ", x );
+        logInfo( "Init RotateThing X: ", x, " Color: ", color );
     }
 
     // Overridables
