@@ -3,7 +3,7 @@
 	"description": "A sample D game built with Dash.",
 	"copyright": "2014",
 	"license": "MIT",
-	"authors": [ 
+	"authors": [
 		"Colden Cullen",
 		"Brandon Littell",
 		"Eric Christenson",
@@ -12,11 +12,11 @@
 		"Timothy Reynolds"
 	],
 	"dependencies": {
-		"dash": "~master" 
+		"dash": "~master"
 	},
-	"sourcePaths": [ 
+	"sourcePaths": [
 		"Scripts/",
-		"Config/", 
+		"Config/",
 		"Materials/",
 		"Objects/",
 		"Prefabs/",
@@ -25,10 +25,21 @@
 	"importPaths": [ "Scripts/" ],
 	"targetType": "executable",
 	"targetPath": "Binaries",
+	"workingDirectory": "Binaries",
 	"lflags-linux" : [ "./libawesomium-1.6.5.so" ],
 	"libs-windows": [
 		"Awesomium",
 		"gdi32", "ole32", "kernel32",
 		"user32", "comctl32", "comdlg32"
-	]
+	],
+
+	"stringImportPaths": [ "./" ],
+
+	"buildTypes": {
+		"release": {
+			"versions": [ "EmbedContent" ],
+			"buildOptions": [ "releaseMode", "optimize", "inline" ],
+			"lflags-windows": [	"/EXETYPE:NT", "/SUBSYSTEM:WINDOWS" ]
+		}
+	}
 }

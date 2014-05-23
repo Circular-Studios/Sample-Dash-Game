@@ -4,29 +4,44 @@ import graphics.graphics;
 import components.camera, components.userinterface;
 import utility;
 
+import testobject;
+
 import gl3n.linalg;
 
-shared class TestGame : DGame
+mixin ContentImport;
+
+class TestGame : DGame
 {
     UserInterface ui;
     Camera cam;
     
     override void onInitialize()
     {
-        logInfo( "Initializing TestGame..." );
+        logDebug( "Initializing TestGame..." );
 
-        Input.addKeyDownEvent( Keyboard.Escape, ( uint kc ) { currentState = EngineState.Quit; } );
-        Input.addKeyDownEvent( Keyboard.F5, ( uint kc ) { currentState = EngineState.Reset; } );
-        Input.addKeyDownEvent( Keyboard.MouseLeft, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
+        Keyboard.addButtonDownEvent( Keyboard.Buttons.Escape, ( kc ) { currentState = EngineState.Quit; } );
+        Keyboard.addButtonDownEvent( Keyboard.Buttons.F5, ( kc ) { currentState = EngineState.Refresh; } );
+        Keyboard.addButtonDownEvent( Keyboard.Buttons.F6, ( kc ) { currentState = EngineState.Reset; } );
+        Mouse.addButtonDownEvent( Mouse.Buttons.Left, ( kc ) { if( auto obj = Input.mouseObject ) logInfo( "Clicked on ", obj.name ); } );
+        Mouse.addAxisEvent( Mouse.Axes.ScrollWheel, ( ac, newVal ) => logInfo( "New Scroll: ", newVal ) );
+        Mouse.addButtonDownEvent( Mouse.Buttons.Right, ( kc )
+            {
+                static uint x = 0;
+                auto newObj = Prefabs[ "SupaFab" ].createInstance();
+                newObj.transform.position.x = x++;
+                activeScene.addChild( newObj );
+            } );
 
-        activeScene = new shared Scene;
+        activeScene = new Scene;
         activeScene.loadObjects( "" );
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
         uint w, h;
-        w = Config.get!uint( "Display.Width" );
-        h = Config.get!uint( "Display.Height" );
-        ui = new shared UserInterface(w, h, Config.get!string( "UserInterface.FilePath" ) );
+        w = config.find!uint( "Display.Width" );
+        h = config.find!uint( "Display.Height" );
+        ui = new UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
+
+        //auto obj = GameObject.createWithBehavior!TestObject;
 
         //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
     }
@@ -55,5 +70,10 @@ shared class TestGame : DGame
     override void onSaveState()
     {
         logInfo( "Resetting..." );
+    }
+
+    override void onRefresh()
+    {
+        logInfo( "Refreshing..." );
     }
 }
