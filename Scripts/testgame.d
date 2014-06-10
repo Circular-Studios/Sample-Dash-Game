@@ -1,8 +1,8 @@
 module testgame;
-import core;
-import graphics.graphics;
-import components.camera, components.userinterface;
-import utility;
+import dash.core;
+import dash.graphics.graphics;
+import dash.components.camera, dash.components.userinterface;
+import dash.utility;
 
 import testobject;
 
@@ -14,7 +14,7 @@ class TestGame : DGame
 {
     UserInterface ui;
     Camera cam;
-    
+
     override void onInitialize()
     {
         logDebug( "Initializing TestGame..." );
@@ -50,7 +50,7 @@ class TestGame : DGame
     {
         ui.update();
     }
-    
+
     override void onDraw()
     {
         ui.draw();

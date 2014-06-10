@@ -1,7 +1,7 @@
 module testobject;
-import core.gameobject;
-import utility.input, utility.output, utility.time;
-import components;
+import dash.core.gameobject;
+import dash.utility.input, dash.utility.output, dash.utility.time;
+import dash.components;
 import gl3n.linalg;
 import std.random;
 
@@ -12,7 +12,7 @@ class TestObject : Component
 {
     override void initialize()
     {
-        
+
     }
 
     // Overridables
@@ -76,7 +76,7 @@ class RotateThing : Component
 
         this.transform.rotation.rotatey( -std.math.PI * Time.deltaTime );
     }
-    
+
     /// Called on shutdown.
     override void shutdown() { }
 }
@@ -90,7 +90,7 @@ class RotateCamera : Component
     {
         this.transform.rotation.rotatex( -std.math.PI * Time.deltaTime );
     }
-    
+
     /// Called on shutdown.
     override void shutdown() { }
 }
