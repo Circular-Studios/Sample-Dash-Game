@@ -74,6 +74,6 @@ class TestGame : DGame
 
     override void onRefresh()
     {
-        logInfo( "Refreshing..." );
+        //logInfo( "Refreshing..." );
     }
 }
