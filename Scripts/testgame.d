@@ -3,6 +3,7 @@ import dash.core;
 import dash.graphics.graphics;
 import dash.components.camera, dash.components.userinterface;
 import dash.utility;
+import dash.utility.soloud;
 
 import testobject;
 
@@ -14,6 +15,8 @@ class TestGame : DGame
 {
     UserInterface ui;
     Camera cam;
+    Soloud soloud;
+    Speech speech;
 
     override void onInitialize()
     {
@@ -44,6 +47,14 @@ class TestGame : DGame
         //auto obj = GameObject.createWithBehavior!TestObject;
 
         //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
+
+        import std.string: toStringz;
+        soloud = Soloud.create();
+        soloud.init();
+        speech = Speech.create();
+
+        speech.setText("welcome".toStringz());
+        auto handle = soloud.play(speech);
     }
 
     override void onUpdate()
@@ -58,6 +69,8 @@ class TestGame : DGame
 
     override void onShutdown()
     {
+        soloud.deinit();
+
         logInfo( "Shutting down..." );
         foreach( obj; activeScene.objects )
             obj.shutdown();
