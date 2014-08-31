@@ -4,12 +4,25 @@ import dash.graphics.graphics;
 import dash.components.camera, dash.components.userinterface;
 import dash.utility;
 import dash.utility.soloud;
+import dash.net;
 
 import testobject;
 
 import gl3n.linalg;
 
 mixin ContentImport;
+
+// The Message struct is used for sending messages over the network
+struct Message
+{
+    string sender;
+    string message;
+
+    string toString()
+    {
+        return sender ~ "> " ~ message;
+    }
+}
 
 class TestGame : DGame
 {
@@ -33,6 +46,50 @@ class TestGame : DGame
                 auto newObj = Prefabs[ "SupaFab" ].createInstance();
                 newObj.transform.position.x = x++;
                 activeScene.addChild( newObj );
+            } );
+
+        // add events for connecting and testing dash.net
+        // V starts the server
+        Keyboard.addButtonDownEvent( Keyboard.Buttons.V, ( kc )
+            {
+                logInfo( "Waiting for connection..." );
+                auto conman = ConnectionManager.open();
+                conman.onNewConnection ~= ( shared Connection conn )
+                {
+                    logInfo( "New Connection." );
+                    conn.onReceiveData!Message ~= ( Message message )
+                    {
+                        logInfo( message.sender, "> ", message.message );
+                        conn.send!Message( message, ConnectionType.TCP );
+                    };
+                };
+                conman.start();
+            } );
+        // C connects you to the server
+        Keyboard.addButtonDownEvent( Keyboard.Buttons.C, ( kc )
+            {
+                string ip = "127.0.0.1";
+                string username = "client";
+
+                auto conn = Connection.open( ip, false, ConnectionType.TCP );
+                logInfo( "Connected." );
+
+                conn.onReceiveData!Message ~= ( Message msg )
+                {
+                    logInfo( msg.sender, "> ", msg.message );
+                };
+
+                // add an event that can send a message
+                Keyboard.addButtonDownEvent( Keyboard.Buttons.M, ( kc )
+                    {
+                        Message msg;
+                        msg.message = "test message please ignore";
+                        msg.sender = username;
+
+                        conn.send!Message( msg, ConnectionType.TCP );
+
+                        conn.update();
+                    } );
             } );
 
         activeScene = new Scene;
