@@ -22,6 +22,8 @@ class TestGame : DGame
     {
         logDebug( "Initializing TestGame..." );
 
+        stateFlags.autoRefresh = false;
+
         Keyboard.addButtonDownEvent( Keyboard.Buttons.Escape, ( kc ) { currentState = EngineState.Quit; } );
         Keyboard.addButtonDownEvent( Keyboard.Buttons.F5, ( kc ) { currentState = EngineState.Refresh; } );
         Keyboard.addButtonDownEvent( Keyboard.Buttons.F6, ( kc ) { currentState = EngineState.Reset; } );
@@ -34,6 +36,12 @@ class TestGame : DGame
                 newObj.transform.position.x = x++;
                 activeScene.addChild( newObj );
             } );
+
+        Keyboard.addButtonDownEvent( Keyboard.Buttons.B,
+                                     kc =>
+                                        editor.send!string( "test", "myData",
+                                                            response =>
+                                                                logInfo( "Got response: ", response ) ) );
 
         activeScene = new Scene;
         activeScene.loadObjects( "" );

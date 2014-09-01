@@ -18,3 +18,5 @@ Physics:
 UserInterface:
     FilePath: "uitest.html"
     Scale: !Vector2 1.0 1.0
+Editor:
+    Port: 8008
