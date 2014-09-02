@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MAH EDITOR</title>
+        <script charset="utf-8" type="text/javascript" src="../../js/dist/dash.js"></script>
+        <script charset="utf-8">
+            function createDash()
+            {
+                var dash = new Dash();
+                dash.registerReceiveHandler( "test", function( data, cb ) { console.log( data ); cb( "success" ) } );
+                dash.onConnect = function() { console.log( "Connected" ); };
+                dash.onError = function( err ) { console.log( "Error" ); };
+                dash.onDisconnect = function( err ) { console.log( "Disconnect" ); };
+                return dash;
+            }
+
+            var dash = createDash();
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
