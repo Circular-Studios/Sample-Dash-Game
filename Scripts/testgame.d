@@ -1,7 +1,7 @@
 module testgame;
 import dash.core;
 import dash.graphics.graphics;
-import dash.components.camera, dash.components.userinterface;
+import dash.components;
 import dash.utility;
 import dash.utility.soloud;
 
@@ -27,7 +27,6 @@ class TestGame : DGame
         Keyboard.addButtonDownEvent( Keyboard.Buttons.Escape, ( kc ) { currentState = EngineState.Quit; } );
         Keyboard.addButtonDownEvent( Keyboard.Buttons.F5, ( kc ) { currentState = EngineState.Refresh; } );
         Keyboard.addButtonDownEvent( Keyboard.Buttons.F6, ( kc ) { currentState = EngineState.Reset; } );
-		Keyboard.addButtonDownEvent( "PlaySound", ( kc ) { ; } );
         Mouse.addButtonDownEvent( Mouse.Buttons.Left, ( kc ) { auto obj = Input.mouseObject; logInfo( "Clicked on ", obj ? obj.name : "null" ); } );
         Mouse.addAxisEvent( Mouse.Axes.ScrollWheel, ( ac, newVal ) => logInfo( "New Scroll: ", newVal ) );
         Mouse.addButtonDownEvent( Mouse.Buttons.Right, ( kc )
@@ -48,6 +47,8 @@ class TestGame : DGame
         activeScene.loadObjects( "" );
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
+		Keyboard.addButtonDownEvent( Keyboard.Buttons.P, ( kc ) { activeScene[ "SuperWidget2" ].emitter.play( "airhorn" ); } );
+
         uint w, h;
         w = config.find!uint( "Display.Width" );
         h = config.find!uint( "Display.Height" );
@@ -58,12 +59,10 @@ class TestGame : DGame
         //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
 
         import std.string: toStringz;
-        soloud = Soloud.create();
-        soloud.init();
         speech = Speech.create();
 
         speech.setText("welcome".toStringz());
-        auto handle = soloud.play(speech);
+        auto handle = Audio.soloud.play(speech);
     }
 
     override void onUpdate()
