@@ -8,3 +8,5 @@ Camera:
     FOV: 59
     Near: .01
     Far: 250
+Listener:
+    Enabled: true

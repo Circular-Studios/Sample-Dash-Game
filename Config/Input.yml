@@ -4,3 +4,5 @@ Backward:
     Keyboard: S
 Jump:
     Keyboard: Space
+PlaySound:
+    Keyboard: P
