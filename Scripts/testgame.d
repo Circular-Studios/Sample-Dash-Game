@@ -77,8 +77,6 @@ class TestGame : DGame
 
     override void onShutdown()
     {
-        soloud.deinit();
-
         logInfo( "Shutting down..." );
         foreach( obj; activeScene.objects )
             obj.shutdown();
