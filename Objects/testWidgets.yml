@@ -33,6 +33,8 @@ Children:
             Position: !Vector3 20 30 0
             Scale: !Vector3 1 1 1
             Rotation: !Vector3 0 0 0
+        Emitter:
+            Active: true
   - Name: Child3
 #    Behaviors:
 #      - Class: testobject.RotateThing
@@ -56,5 +58,3 @@ Transform:
   Position: !Vector3 -100 -50 0
   Scale: !Vector3 10 10 10
   Rotation: !Vector3 90 0 0
-Emitter:
-  Active: true
