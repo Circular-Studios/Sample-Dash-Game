@@ -10,9 +10,9 @@ RotateThing:
   Nest:
     color: White
 Transform:
-    Position: !Vector3 0 0 0
-    Scale: !Vector3 1 1 1
-    Rotation: !Vector3 0 0 0
+    Position: [ 0, 0, 0 ]
+    Scale: [ 1, 1, 1 ]
+    Rotation: [ 0, 0, 0 ]
 Children:
   - Name: Child1
     InstanceOf: SupaFab
@@ -20,9 +20,9 @@ Children:
 #    Behaviors:
 #      - Class: testobject.RotateThing
     Transform:
-        Position: !Vector3 20 0 0
-        Scale: !Vector3 1 1 1
-        Rotation: !Vector3 0 0 0
+        Position: [ 20, 0, 0 ]
+        Scale: [ 1, 1, 1 ]
+        Rotation: [ 0, 0, 0 ]
     Children:
       - Name: Child2
         InstanceOf: SupaFab
@@ -30,29 +30,29 @@ Children:
 #        Behaviors:
 #          - Class: testobject.RotateThing
         Transform:
-            Position: !Vector3 20 30 0
-            Scale: !Vector3 1 1 1
-            Rotation: !Vector3 0 0 0
+            Position: [ 20, 30, 0 ]
+            Scale: [ 1, 1, 1 ]
+            Rotation: [ 0, 0, 0 ]
   - Name: Child3
 #    Behaviors:
 #      - Class: testobject.RotateThing
     InstanceOf: SupaFab
     Material: child3Mat
     Transform:
-        Position: !Vector3 -10 0 0
-        Scale: !Vector3 1 1 1
-        Rotation: !Vector3 0 0 0
+        Position: [ -10, 0, 0 ]
+        Scale: [ 1, 1, 1 ]
+        Rotation: [ 0, 0, 0 ]
 ---
 Name: SuperWidget1
 InstanceOf: SupaFab
 Transform:
-  Position: !Vector3 0 -50 0
-  Scale: !Vector3 10 10 10
-  Rotation: !Vector3 90 0 0
+  Position: [ 0, -50, 0 ]
+  Scale: [ 10, 10, 10 ]
+  Rotation: [ 90, 0, 0 ]
 ---
 Name: SuperWidget2
 InstanceOf: SupaFab
 Transform:
-  Position: !Vector3 -100 -50 0
-  Scale: !Vector3 10 10 10
-  Rotation: !Vector3 90 0 0
+  Position: [ -100, -50, 0 ]
+  Scale: [ 10, 10, 10 ]
+  Rotation: [ 90, 0, 0 ]
