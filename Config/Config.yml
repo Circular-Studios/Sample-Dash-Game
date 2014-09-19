@@ -1,11 +1,11 @@
 Logging:
     FilePath: "dash.log"
     Debug:
-        OutputVerbosity: !Verbosity Debug
-        LoggingVerbosity: !Verbosity Debug
+        OutputVerbosity: Debug
+        LoggingVerbosity: Debug
     Release:
-        OutputVerbosity: !Verbosity Medium
-        LoggingVerbosity: !Verbosity Medium
+        OutputVerbosity: Medium
+        LoggingVerbosity: Medium
 Display:
     Fullscreen: false
     Height: 720
@@ -13,10 +13,8 @@ Display:
 Graphics:
     BackfaceCulling: true
     VSync: false
-Physics:
-    Gravity: !Vector3 0.0 -10.0 0.0
 UserInterface:
     FilePath: "uitest.html"
-    Scale: !Vector2 1.0 1.0
+    Scale: [ 1.0, 1.0 ]
 Editor:
     Port: 8008

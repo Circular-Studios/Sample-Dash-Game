@@ -1,15 +1,8 @@
 module testgame;
-import dash.core;
-import dash.graphics.graphics;
-import dash.components.camera, dash.components.userinterface;
-import dash.utility;
+import dash;
 import dash.utility.soloud;
 
 import testobject;
-
-import gl3n.linalg;
-
-mixin ContentImport;
 
 class TestGame : DGame
 {
@@ -48,9 +41,9 @@ class TestGame : DGame
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
         uint w, h;
-        w = config.find!uint( "Display.Width" );
-        h = config.find!uint( "Display.Height" );
-        ui = new UserInterface(w, h, config.find!string( "UserInterface.FilePath" ) );
+        w = config.display.width;
+        h = config.display.height;
+        ui = new UserInterface(w, h, config.userInterface.filePath);
 
         //auto obj = GameObject.createWithBehavior!TestObject;
 

@@ -4,7 +4,8 @@ Transform:
     Position: [ 0, 20, 120 ]
     Scale: [ 1, 1, 1 ]
     Rotation: [ 0, 0, 0 ]
-Camera: 
+Components:
+  - Type: Camera
     FOV: 59
     Near: .01
     Far: 250
