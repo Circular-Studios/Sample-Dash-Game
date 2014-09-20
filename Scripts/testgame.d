@@ -47,7 +47,7 @@ class TestGame : DGame
         activeScene.loadObjects( "" );
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
-		Keyboard.addButtonDownEvent( Keyboard.Buttons.P, ( kc ) { activeScene[ "Child2" ].emitter.play( "airhorn" ); } );
+		Keyboard.addButtonDownEvent( Keyboard.Buttons.P, ( kc ) { activeScene[ "Child3" ].emitter.playFollow( "airhorn" ); } );
 
         uint w, h;
         w = config.find!uint( "Display.Width" );
