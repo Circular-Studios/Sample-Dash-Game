@@ -11,7 +11,7 @@
 		"dash": "~master",
 		"derelict-sdl2": "1.2.4",
 		"openssl": "~master",
-		"vibe-d": "~master",
+		"vibe-d": "0.7.21-beta.4",
 		"derelict-util": "1.0.2",
 		"libevent": "~master",
 		"gl3n": "~master",

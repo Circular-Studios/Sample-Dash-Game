@@ -2,5 +2,8 @@ Name: BrickFab
 Transform:
     Position: [ 0, 0, 0 ]
     Scale: [ 3, 3, 3 ]
-Mesh: 786k
-Material: brickmat
+Components:
+  - Type: Mesh
+    Asset: 786k
+  - Type: Material
+    Asset: brickmat
