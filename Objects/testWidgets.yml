@@ -11,8 +11,6 @@ Components:
   - Type: RotateThing
     X: 5.5
     Color: White
-    Nest:
-        color: White
 Children:
   - Name: Child1
     InstanceOf: SupaFab

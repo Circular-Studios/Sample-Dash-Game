@@ -14,6 +14,7 @@ class TestObject : Component
     // Overridables
     override void update()
     {
+        /*
         if( Input.getState( "Forward" ) )
         {
             logNotice( "Forward" );
@@ -26,6 +27,7 @@ class TestObject : Component
         {
             logNotice( "Jump" );
         }
+        */
     }
 
     /// Called on shutdown.
@@ -45,7 +47,7 @@ class RotateThing : Component
 
     @rename( "X" )
     float x;
-    @rename( "Color" )
+    @rename( "Color" ) @byName
     Color color;
 
     override void initialize()
@@ -56,6 +58,7 @@ class RotateThing : Component
     // Overridables
     override void update()
     {
+        /*
         if( Input.getState( "Forward" ) )
         {
             logNotice( "Forward" );
@@ -68,8 +71,9 @@ class RotateThing : Component
         {
             logNotice( "Jump" );
         }
+        */
 
-        this.transform.rotation *= quatf.fromEulerAngles( 0.0f, -std.math.PI * Time.deltaTime, 0.0f );
+        this.transform.rotation *= fromEulerAngles!float( 0.0f, -std.math.PI * Time.deltaTime, 0.0f );
     }
 
     /// Called on shutdown.
@@ -82,7 +86,7 @@ class RotateCamera : Component
     // Overridables
     override void update()
     {
-        this.transform.rotation *= quatf.fromEulerAngles( -std.math.PI * Time.deltaTime, 0.0f, 0.0f );
+        this.transform.rotation *= fromEulerAngles!float( -std.math.PI * Time.deltaTime, 0.0f, 0.0f );
     }
 
     /// Called on shutdown.

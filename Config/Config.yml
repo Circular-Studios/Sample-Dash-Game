@@ -11,7 +11,7 @@ Display:
     Height: 720
     Width: 1280
 Graphics:
-    BackfaceCulling: true
+    BackfaceCulling: false
     VSync: false
 UserInterface:
     FilePath: "uitest.html"

@@ -2,14 +2,15 @@
 Name: DirectionalLight
 Components:
   - Type: DirectionalLight
-    Color: [ 0.6, 0.6, 0.6 ]
-    Direction: [ -0.5, -1.0, 0.0 ]
+    #Color: [ 0.6, 0.6, 0.6 ]
+    #Direction: [ -0.5, -1.0, 0.0 ]
+    CastShadows: true
 ---
 Name: PointLight
 Transform:
     Position: [ 0, 5, 0 ]
 Components:
   - Type: PointLight
-    Color: [ 1, 0, 0 ]
+    #Color: [ 1, 0, 0 ]
     Radius: 50
     FalloffRate: 1
