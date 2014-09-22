@@ -73,7 +73,7 @@ class RotateThing : Component
         }
         */
 
-        this.transform.rotation *= fromEulerAngles!float( 0.0f, -std.math.PI * Time.deltaTime, 0.0f );
+        this.transform.rotation *= fromEulerAngles!float( 0.0f, (-std.math.PI * Time.deltaTime).degrees, 0.0f );
     }
 
     /// Called on shutdown.
@@ -86,7 +86,7 @@ class RotateCamera : Component
     // Overridables
     override void update()
     {
-        this.transform.rotation *= fromEulerAngles!float( -std.math.PI * Time.deltaTime, 0.0f, 0.0f );
+        this.transform.rotation *= fromEulerAngles!float( (-std.math.PI * Time.deltaTime).degrees, 0.0f, 0.0f );
     }
 
     /// Called on shutdown.
