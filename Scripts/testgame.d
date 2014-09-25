@@ -40,6 +40,8 @@ class TestGame : DGame
         activeScene.loadObjects( "" );
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
+		Keyboard.addButtonDownEvent( Keyboard.Buttons.P, ( kc ) { activeScene[ "Child3" ].emitter.playFollow( "airhorn" ); } );
+
         uint w, h;
         w = config.display.width;
         h = config.display.height;
@@ -50,12 +52,10 @@ class TestGame : DGame
         //scheduleTimedTask( { logInfo( "Executing: ", Time.totalTime ); }, 250.msecs );
 
         import std.string: toStringz;
-        soloud = Soloud.create();
-        soloud.init();
         speech = Speech.create();
 
         speech.setText("welcome".toStringz());
-        auto handle = soloud.play(speech);
+        auto handle = Audio.soloud.play(speech);
     }
 
     override void onUpdate()
@@ -70,8 +70,6 @@ class TestGame : DGame
 
     override void onShutdown()
     {
-        soloud.deinit();
-
         logInfo( "Shutting down..." );
         foreach( obj; activeScene.objects )
             obj.shutdown();

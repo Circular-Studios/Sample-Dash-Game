@@ -9,3 +9,5 @@ Components:
     FOV: 59
     Near: .01
     Far: 250
+  - Type: Listener
+    Enabled: true
