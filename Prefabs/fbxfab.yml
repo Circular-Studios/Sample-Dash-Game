@@ -1,11 +1,11 @@
 ---
 Name: FbxFab
 Transform:
-    Position: !Vector3 0 0 0
-    Rotation: !Vector3 0 0 0
-    Scale: !Vector3 1 1 1
-Mesh: fbxtest
-Material: fbxmat
----
-Name: CameraFab
-Camera: true
+    Position: [ 0, 0, 0 ]
+    Rotation: [ 0, 0, 0 ]
+    Scale: [ 1, 1, 1 ]
+Components:
+  - Type: Mesh
+    Asset: fbxtest
+  - Type: Material
+    Asset: fbxmat

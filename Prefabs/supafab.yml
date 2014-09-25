@@ -1,3 +1,6 @@
 Name: SupaFab
-Mesh: object
-Material: testmat
+Components:
+  - Type: Mesh
+    Asset: object
+  - Type: Material
+    Asset: testmat

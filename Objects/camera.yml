@@ -1,10 +1,11 @@
 ---
 Name: TestCamera
 Transform:
-    Position: !Vector3 0 20 120
-    Scale: !Vector3 1 1 1
-    Rotation: !Vector3 0 0 0
-Camera: 
+    Position: [ 0, 20, 120 ]
+    Scale: [ 1, 1, 1 ]
+    Rotation: [ 0, 0, 0 ]
+Components:
+  - Type: Camera
     FOV: 59
     Near: .01
     Far: 250

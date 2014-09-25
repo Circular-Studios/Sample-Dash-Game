@@ -1,13 +1,9 @@
 module testobject;
-import dash.core.gameobject;
-import dash.utility.input, dash.utility.output, dash.utility.time;
-import dash.components;
-import gl3n.linalg;
+import dash;
 import std.random;
 
-mixin( registerComponents!q{testobject} );
+mixin( registerComponents!() );
 
-@yamlComponent()
 class TestObject : Component
 {
     override void initialize()
@@ -18,6 +14,7 @@ class TestObject : Component
     // Overridables
     override void update()
     {
+        /*
         if( Input.getState( "Forward" ) )
         {
             logNotice( "Forward" );
@@ -30,6 +27,7 @@ class TestObject : Component
         {
             logNotice( "Jump" );
         }
+        */
     }
 
     /// Called on shutdown.
@@ -43,14 +41,13 @@ enum Color
     Black,
 }
 
-@yamlComponent()
 class RotateThing : Component
 {
     alias owner this;
 
-    @field( "X" )
+    @rename( "X" )
     float x;
-    @field( "Color" )
+    @rename( "Color" ) @byName
     Color color;
 
     override void initialize()
@@ -61,6 +58,7 @@ class RotateThing : Component
     // Overridables
     override void update()
     {
+        /*
         if( Input.getState( "Forward" ) )
         {
             logNotice( "Forward" );
@@ -73,22 +71,22 @@ class RotateThing : Component
         {
             logNotice( "Jump" );
         }
+        */
 
-        this.transform.rotation.rotatey( -std.math.PI * Time.deltaTime );
+        this.transform.rotation *= fromEulerAngles!float( 0.0f, (-std.math.PI * Time.deltaTime).degrees, 0.0f );
     }
 
     /// Called on shutdown.
     override void shutdown() { }
 }
 
-@yamlComponent()
 class RotateCamera : Component
 {
     alias owner this;
     // Overridables
     override void update()
     {
-        this.transform.rotation.rotatex( -std.math.PI * Time.deltaTime );
+        this.transform.rotation *= fromEulerAngles!float( (-std.math.PI * Time.deltaTime).degrees, 0.0f, 0.0f );
     }
 
     /// Called on shutdown.

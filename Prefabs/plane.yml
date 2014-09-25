@@ -1,4 +1,7 @@
 ---
 Name: Plane
-Mesh: unitsquare
-Material: fbxmat
+Components:
+  - Type: Mesh
+    Asset: unitsquare
+  - Type: Material
+    Asset: fbxmat
