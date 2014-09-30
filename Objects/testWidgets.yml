@@ -36,7 +36,7 @@ Children:
     Components:
       - Type: Material
         Asset: child3Mat
-      - Emitter:
+      - Type: Emitter
         Enabled: true
     Transform:
         Position: [ -10, 0, 0 ]
