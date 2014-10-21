@@ -14,7 +14,6 @@ class TestObject : Component
     // Overridables
     override void update()
     {
-        /*
         if( Input.getState( "Forward" ) )
         {
             logNotice( "Forward" );
@@ -27,7 +26,6 @@ class TestObject : Component
         {
             logNotice( "Jump" );
         }
-        */
     }
 
     /// Called on shutdown.
@@ -58,7 +56,6 @@ class RotateThing : Component
     // Overridables
     override void update()
     {
-        /*
         if( Input.getState( "Forward" ) )
         {
             logNotice( "Forward" );
@@ -71,7 +68,6 @@ class RotateThing : Component
         {
             logNotice( "Jump" );
         }
-        */
 
         this.transform.rotation *= fromEulerAngles!float( 0.0f, (-std.math.PI * Time.deltaTime).degrees, 0.0f );
     }

@@ -1,6 +1,12 @@
 Forward:
-    Keyboard: W
+  Keyboard:
+    - W
 Backward:
-    Keyboard: S
+  Keyboard:
+    - S
 Jump:
-    Keyboard: Space
+  Keyboard:
+    - Space
+Quit:
+  Keyboard:
+    - Escape
