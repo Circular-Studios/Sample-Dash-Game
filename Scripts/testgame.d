@@ -18,11 +18,11 @@ class TestGame : DGame
         stateFlags.autoRefresh = false;
 
         Input.addButtonDownEvent( "Quit", ( newState ) { currentState = EngineState.Quit; } );
-        Keyboard.addButtonDownEvent( Keyboard.Buttons.F5, ( kc ) { currentState = EngineState.Refresh; } );
-        Keyboard.addButtonDownEvent( Keyboard.Buttons.F6, ( kc ) { currentState = EngineState.Reset; } );
-        Mouse.addButtonDownEvent( Mouse.Buttons.Left, ( kc ) { auto obj = Input.mouseObject; logInfo( "Clicked on ", obj ? obj.name : "null" ); } );
-        Mouse.addAxisEvent( Mouse.Axes.ScrollWheel, ( ac, newVal ) => logInfo( "New Scroll: ", newVal ) );
-        Mouse.addButtonDownEvent( Mouse.Buttons.Right, ( kc )
+        Input.addButtonDownEvent( "Refresh", ( kc ) { currentState = EngineState.Refresh; } );
+        Input.addButtonDownEvent( "Reset", ( kc ) { currentState = EngineState.Reset; } );
+        Input.addButtonDownEvent( "Select", ( kc ) { auto obj = Input.mouseObject; logInfo( "Clicked on ", obj ? obj.name : "null" ); } );
+        Input.addAxisEvent( "TestScroll", newVal => logInfo( "New Scroll: ", newVal ) );
+        Input.addButtonDownEvent( "Spawn", ( kc )
             {
                 static uint x = 0;
                 auto newObj = Prefabs[ "SupaFab" ].createInstance();
@@ -30,7 +30,7 @@ class TestGame : DGame
                 activeScene.addChild( newObj );
             } );
 
-        Keyboard.addButtonDownEvent( Keyboard.Buttons.B,
+        Input.addButtonDownEvent( "SendToEditor",
                                      kc =>
                                         editor.send!string( "test", "myData",
                                                             response =>
@@ -40,7 +40,7 @@ class TestGame : DGame
         activeScene.loadObjects( "" );
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
-        Keyboard.addButtonDownEvent( Keyboard.Buttons.P, ( kc ) { activeScene[ "Child3" ].emitter.playFollow( "airhorn" ); } );
+        Input.addButtonDownEvent( "ClubHorn", ( kc ) { activeScene[ "Child3" ].emitter.playFollow( "airhorn" ); } );
 
         uint w, h;
         w = config.display.width;

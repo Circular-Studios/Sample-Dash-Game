@@ -10,3 +10,24 @@ Jump:
 Quit:
   Keyboard:
     - Escape
+Refresh:
+  Keyboard:
+    - F5
+Reset:
+  Keyboard:
+    - F6
+Select:
+  Mouse:
+    - Left
+Spawn:
+  Mouse:
+    - Right
+SendToEditor:
+  Keyboard:
+    - B
+ClubHorn:
+  Keyboard:
+    - P
+TestScroll:
+  MouseAxes:
+    - ScrollWheel
