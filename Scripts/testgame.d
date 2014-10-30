@@ -1,6 +1,6 @@
 module testgame;
 import dash;
-import dash.utility.soloud;
+import dash.utility.bindings.soloud;
 
 import testobject;
 
