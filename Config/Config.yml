@@ -1,11 +1,11 @@
 Logging:
     FilePath: "dash.log"
     Debug:
-        OutputVerbosity: Debug
-        LoggingVerbosity: Debug
+        OutputVerbosity: all
+        LoggingVerbosity: all
     Release:
-        OutputVerbosity: Medium
-        LoggingVerbosity: Medium
+        OutputVerbosity: warning
+        LoggingVerbosity: warning
 Display:
     Fullscreen: false
     Height: 720
