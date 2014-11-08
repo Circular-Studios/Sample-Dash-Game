@@ -32,8 +32,8 @@ class TestGame : DGame
 
         Input.addButtonDownEvent( "SendToEditor",
                                      kc =>
-                                        editor.send!string( "test", "myData",
-                                                            response =>
+                                        editor.send( "test", "myData",
+                                                            ( string response ) =>
                                                                 logInfo( "Got response: ", response ) ) );
 
         activeScene = new Scene;
