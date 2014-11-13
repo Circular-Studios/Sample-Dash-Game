@@ -13,15 +13,15 @@ class TestGame : DGame
 
     override void onInitialize()
     {
-        logDebug( "Initializing TestGame..." );
+        trace( "Initializing TestGame..." );
 
         stateFlags.autoRefresh = false;
 
         Input.addButtonDownEvent( "Quit", ( newState ) { currentState = EngineState.Quit; } );
         Input.addButtonDownEvent( "Refresh", ( kc ) { currentState = EngineState.Refresh; } );
         Input.addButtonDownEvent( "Reset", ( kc ) { currentState = EngineState.Reset; } );
-        Input.addButtonDownEvent( "Select", ( kc ) { auto obj = Input.mouseObject; logInfo( "Clicked on ", obj ? obj.name : "null" ); } );
-        Input.addAxisEvent( "TestScroll", newVal => logInfo( "New Scroll: ", newVal ) );
+        Input.addButtonDownEvent( "Select", ( kc ) { auto obj = Input.mouseObject; infof( "Clicked on %s", obj ? obj.name : "null" ); } );
+        Input.addAxisEvent( "TestScroll", newVal => infof( "New Scroll: %s", newVal ) );
         Input.addButtonDownEvent( "Spawn", ( kc )
             {
                 static uint x = 0;
@@ -34,7 +34,7 @@ class TestGame : DGame
                                      kc =>
                                         editor.send( "test", "myData",
                                                             ( string response ) =>
-                                                                logInfo( "Got response: ", response ) ) );
+                                                                infof( "Got response: %s", response ) ) );
 
         activeScene = new Scene;
         activeScene.loadObjects( "" );
@@ -70,7 +70,7 @@ class TestGame : DGame
 
     override void onShutdown()
     {
-        logInfo( "Shutting down..." );
+        trace( "Shutting down..." );
         foreach( obj; activeScene.objects )
             obj.shutdown();
         activeScene.clear();
@@ -81,7 +81,7 @@ class TestGame : DGame
 
     override void onSaveState()
     {
-        logInfo( "Resetting..." );
+        trace( "Resetting..." );
     }
 
     override void onRefresh()

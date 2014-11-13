@@ -16,15 +16,15 @@ class TestObject : Component
     {
         if( Input.getState( "Forward" ) )
         {
-            logNotice( "Forward" );
+            trace( "Forward" );
         }
         if( Input.getState( "Backward" ) )
         {
-            logNotice( "Backward" );
+            trace( "Backward" );
         }
         if( Input.getState( "Jump" ) )
         {
-            logNotice( "Jump" );
+            trace( "Jump" );
         }
     }
 
@@ -50,7 +50,7 @@ class RotateThing : Component
 
     override void initialize()
     {
-        logInfo( "Init RotateThing X: ", x, " Color: ", color );
+        info( "Init RotateThing X: ", x, " Color: ", color );
     }
 
     // Overridables
@@ -58,15 +58,15 @@ class RotateThing : Component
     {
         if( Input.getState( "Forward" ) )
         {
-            logNotice( "Forward" );
+            trace( "Forward" );
         }
         if( Input.getState( "Backward" ) )
         {
-            logNotice( "Backward" );
+            trace( "Backward" );
         }
         if( Input.getState( "Jump" ) )
         {
-            logNotice( "Jump" );
+            trace( "Jump" );
         }
 
         this.transform.rotation *= fromEulerAngles!float( 0.0f, (-std.math.PI * Time.deltaTime).degrees, 0.0f );
