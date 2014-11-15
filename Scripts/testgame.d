@@ -6,7 +6,6 @@ import testobject;
 
 class TestGame : DGame
 {
-    UserInterface ui;
     Camera cam;
     Soloud soloud;
     Speech speech;
@@ -45,7 +44,7 @@ class TestGame : DGame
         uint w, h;
         w = config.display.width;
         h = config.display.height;
-        ui = new UserInterface(w, h, config.userInterface.filePath);
+        activeScene.ui = new UserInterface(w, h, config.userInterface.filePath);
 
         //auto obj = GameObject.createWithBehavior!TestObject;
 
@@ -58,16 +57,6 @@ class TestGame : DGame
         auto handle = Audio.soloud.play(speech);
     }
 
-    override void onUpdate()
-    {
-        ui.update();
-    }
-
-    override void onDraw()
-    {
-        ui.draw();
-    }
-
     override void onShutdown()
     {
         trace( "Shutting down..." );
@@ -75,8 +64,6 @@ class TestGame : DGame
             obj.shutdown();
         activeScene.clear();
         activeScene = null;
-
-        ui.shutdown();
     }
 
     override void onSaveState()

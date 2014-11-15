@@ -1,13 +1,24 @@
 <html>
-
 	<head>
 		<title>UI TEST</title>
+
+		<link rel="stylesheet" type="text/css" href="testStyle.css" />
 	</head>
 
 	<body>
-		<h1>UI TEST</h1>
-		<h3>Sub header</h3>
-		<p>This is a test of the awesomium ui system. If it doesn't work...dang.</p>
+		<div class="fullWidthContainer">
+			<div class="testClick" onclick="setText()">
+				<p id="clickable">I haven't been clicked yet :(</p>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		var number = 1;
+		setText = function() {
+			document.getElementById("clickable").innerHTML = "I got clicked! " + number + " times :D";
+			number++;
+		};
+		</script>
 	</body>
 
 </html>
