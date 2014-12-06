@@ -1,0 +1,28 @@
+﻿body {
+	background-color: transparent;
+}
+
+div {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: black;
+}
+
+.fullWidthContainer {
+	width: 100%;
+	bottom: 0px;
+	left: 0;
+	position: fixed;
+	color: transparent;
+}
+
+.testClick {
+	bottom: 0px;
+	
+	background-color: #ccc;
+	height: 100px;
+	width: 600px;
+	margin: 0 auto;
+	vertical-align: middle;
+
+	text-align: center;
+}

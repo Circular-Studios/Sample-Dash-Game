@@ -20,11 +20,12 @@
 		"Materials/",
 		"Objects/",
 		"Prefabs/",
-		"UI/",
+		"UI/"
 	],
 	"importPaths": [ "Scripts/" ],
 	"targetType": "executable",
 	"targetPath": "Binaries",
+	"versions": [ "DashUseSDL2" ],
 	"workingDirectory": "Binaries",
 	"lflags-linux" : [ "./libawesomium-1.6.5.so" ],
 	"libs-windows": [
