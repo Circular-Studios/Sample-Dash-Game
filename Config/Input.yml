@@ -27,7 +27,22 @@ SendToEditor:
     - B
 ClubHorn:
   Keyboard:
-    - P
+    - A
 TestScroll:
   MouseAxes:
     - ScrollWheel
+Pause:
+  Keyboard:
+    - P
+Stop:
+  Keyboard:
+    - O
+AnimOne:
+  Keyboard:
+    - "Keyboard1"
+AnimTwo:
+  Keyboard:
+    - "Keyboard2"
+AnimTwoOnce:
+  Keyboard:
+    - "Keyboard3"

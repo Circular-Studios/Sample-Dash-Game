@@ -17,12 +17,12 @@ class TestGame : DGame
 
         stateFlags.autoRefresh = false;
 
-        Input.addButtonDownEvent( "Quit", ( newState ) { currentState = EngineState.Quit; } );
-        Input.addButtonDownEvent( "Refresh", ( kc ) { currentState = EngineState.Refresh; } );
-        Input.addButtonDownEvent( "Reset", ( kc ) { currentState = EngineState.Reset; } );
-        Input.addButtonDownEvent( "Select", ( kc ) { auto obj = Input.mouseObject; infof( "Clicked on %s", obj ? obj.name : "null" ); } );
+        Input.addButtonDownEvent( "Quit", ( _ ) { currentState = EngineState.Quit; } );
+        Input.addButtonDownEvent( "Refresh", ( _ ) { currentState = EngineState.Refresh; } );
+        Input.addButtonDownEvent( "Reset", ( _ ) { currentState = EngineState.Reset; } );
+        Input.addButtonDownEvent( "Select", ( _ ) { auto obj = Input.mouseObject; infof( "Clicked on %s", obj ? obj.name : "null" ); } );
         Input.addAxisEvent( "TestScroll", newVal => infof( "New Scroll: %s", newVal ) );
-        Input.addButtonDownEvent( "Spawn", ( kc )
+        Input.addButtonDownEvent( "Spawn", ( _ )
             {
                 static uint x = 0;
                 auto newObj = Prefabs[ "SupaFab" ].createInstance();
@@ -31,7 +31,7 @@ class TestGame : DGame
             } );
 
         Input.addButtonDownEvent( "SendToEditor",
-                                     kc =>
+                                     _ =>
                                         editor.send( "test", "myData",
                                                             ( string response ) =>
                                                                 infof( "Got response: %s", response ) ) );
@@ -40,7 +40,7 @@ class TestGame : DGame
         activeScene.loadObjects( "" );
         activeScene.camera = activeScene[ "TestCamera" ].camera;
 
-        Input.addButtonDownEvent( "ClubHorn", ( kc ) { activeScene[ "Child3" ].emitter.playFollow( "airhorn" ); } );
+        Input.addButtonDownEvent( "ClubHorn", ( _ ) { activeScene[ "Child3" ].emitter.playFollow( "airhorn" ); } );
 
         uint w, h;
         w = config.display.width;
@@ -56,6 +56,32 @@ class TestGame : DGame
 
         speech.setText("welcome".toStringz());
         auto handle = Audio.soloud.play(speech);
+
+		// Animation tests
+		Animation anim = activeScene[ "DudeBrah" ].getComponent!Animation;
+		Input.addButtonDownEvent( "Pause", ( _ )
+		{
+			if(anim.IsPlaying())
+				anim.pause();
+			else
+				anim.play();
+		} );
+		Input.addButtonDownEvent( "Stop", ( _ )
+		{
+			anim.stop();
+		} );
+		Input.addButtonDownEvent( "AnimOne", ( _ )
+		{
+			anim.changeAnimation( 0, 0 );
+		} );
+		Input.addButtonDownEvent( "AnimTwo", ( _ )
+		{
+			anim.changeAnimation( 1, 0 );
+		} );
+		Input.addButtonDownEvent( "AnimTwoOnce", ( _ )
+		                         {
+			anim.runAnimationOnce( 1 );
+		} );
     }
 
     override void onUpdate()
