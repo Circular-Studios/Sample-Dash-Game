@@ -56,31 +56,31 @@ class TestGame : DGame
         speech.setText("welcome".toStringz());
         auto handle = Audio.soloud.play(speech);
 
-		// Animation tests
-		Animation anim = activeScene[ "DudeBrah" ].getComponent!Animation;
-		Input.addButtonDownEvent( "Pause", ( _ )
-		{
-			if(anim.IsPlaying())
-				anim.pause();
-			else
-				anim.play();
-		} );
-		Input.addButtonDownEvent( "Stop", ( _ )
-		{
-			anim.stop();
-		} );
-		Input.addButtonDownEvent( "AnimOne", ( _ )
-		{
-			anim.changeAnimation( 0, 0 );
-		} );
-		Input.addButtonDownEvent( "AnimTwo", ( _ )
-		{
-			anim.changeAnimation( 1, 0 );
-		} );
-		Input.addButtonDownEvent( "AnimTwoOnce", ( _ )
-		                         {
-			anim.runAnimationOnce( 1 );
-		} );
+        // Animation tests
+        Animation anim = activeScene[ "DudeBrah" ].getComponent!Animation;
+        Input.addButtonDownEvent( "Pause", ( _ )
+        {
+            if(anim.IsPlaying())
+                anim.pause();
+            else
+                anim.play();
+        } );
+        Input.addButtonDownEvent( "Stop", ( _ )
+        {
+            anim.stop();
+        } );
+        Input.addButtonDownEvent( "AnimOne", ( _ )
+        {
+            anim.changeAnimation( "Robot_Anim_Melee", 0 );
+        } );
+        Input.addButtonDownEvent( "AnimTwo", ( _ )
+        {
+            anim.changeAnimation( "Robot_Anim_Range", 0 );
+        } );
+        Input.addButtonDownEvent( "AnimTwoOnce", ( _ )
+        {
+            anim.runAnimationOnce( "Robot_Anim_Range" );
+        } );
     }
 
     override void onShutdown()
